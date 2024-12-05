@@ -13,9 +13,35 @@ services:
     image: nginx/nginx-prometheus-exporter:latest
     command:
       - -nginx.scrape-uri
-      - http://nginx:8080/stub_status
+      - http://web/stub_status
+    networks:
+      - ndi
+    volumes:
+      - prometheus-data:/prometheus
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+      - ./devops/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - ndi
+    ports:
+      - 9113:9113
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - 8801:3000
+    volumes:
+      - grafana-data:/var/lib/grafana
     networks:
       - ndi
 
 networks:
   ndi:
+
+volumes:
+  grafana-data:
+  prometheus-data:

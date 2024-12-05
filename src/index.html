@@ -1,206 +1,276 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <!-- Metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Notre site pour la nuit de l'info 2024, équipe TheWildRobot"
+        />
+        <meta name="author" content="NDLI2024" />
 
-<head>
-    <!-- Metadata -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Notre site pour la nuit de l'info 2024, équipe TheWildRobot">
-    <meta name="author" content="NDLI2024">
+        <!-- Open Graph (for social sharing) -->
+        <meta property="og:title" content="NDLI2024 - TheWildRobot" />
+        <meta
+            property="og:description"
+            content="Notre site pour la nuit de l'info 2024, équipe TheWildRobot"
+        />
+        <meta property="og:image" content="/assets/logo.png" />
+        <meta property="og:url" content="https://yourwebsite.com" />
+        <meta property="og:type" content="website" />
 
-    <!-- Open Graph (for social sharing) -->
-    <meta property="og:title" content="NDLI2024 - TheWildRobot">
-    <meta property="og:description" content="Notre site pour la nuit de l'info 2024, équipe TheWildRobot">
-    <meta property="og:image" content="/assets/logo.png">
-    <meta property="og:url" content="https://yourwebsite.com">
-    <meta property="og:type" content="website">
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="NDLI2024 - TheWildRobot" />
+        <meta
+            name="twitter:description"
+            content="Notre site pour la nuit de l'info 2024, équipe TheWildRobot"
+        />
+        <meta name="twitter:image" content="/assets/logo.png" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="NDLI2024 - TheWildRobot">
-    <meta name="twitter:description" content="Notre site pour la nuit de l'info 2024, équipe TheWildRobot">
-    <meta name="twitter:image" content="/assets/logo.png">
+        <title>NDLI2024 - TheWildRobot</title>
 
-    <title>NDLI2024 - TheWildRobot</title>
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./assets/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="./assets/favicon-16x16.png"
+        />
+        <link rel="manifest" href="./assets/site.webmanifest" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
-    <link rel="manifest" href="./assets/site.webmanifest">
+        <!-- Styles -->
+        <link rel="stylesheet" href="./output.css" />
+        <script defer src="./assets/alpinejs.js"></script>
+        <script defer src="./assets/gsap.js"></script>
+        <script defer src="script.js"></script>
+    </head>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="./output.css" />
-    <script defer src="./assets/alpinejs.js"></script>
-    <script defer src="./assets/gsap.js"></script>
-    <script defer src="script.js"></script>
+    <style>
+        #hover-zone {
+            position: relative;
+            overflow: hidden;
+            width: 300px;
+            height: 300px;
+        }
 
-</head>
+        .base-image,
+        .hover-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: clip-path 0.2s ease-out;
+        }
 
-<style>
-    #hover-zone {
-        position: relative;
-        overflow: hidden;
-        width: 300px;
-        height: 300px;
-    }
+        .hover-image {
+            clip-path: circle(0% at 50% 50%);
+            z-index: 1;
+        }
 
-    .base-image,
-    .hover-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: clip-path 0.2s ease-out;
-    }
+        #hover-zone:hover .hover-image {
+            clip-path: circle(50% at 50% 50%);
+        }
 
-    .hover-image {
-        clip-path: circle(0% at 50% 50%);
-        z-index: 1;
-    }
+        .sticky-container {
+            position: relative;
+            height: 200vh;
+        }
 
-    #hover-zone:hover .hover-image {
-        clip-path: circle(50% at 50% 50%);
-    }
+        .scroll-image {
+            position: sticky;
+            top: 10%;
+            right: 10%;
+            width: 200px;
+            transition: all 0.3s ease-in-out;
+        }
 
-    .sticky-container {
-        position: relative;
-        height: 200vh;
-    }
+        .scroll-image.maximized {
+            width: 400px;
+        }
 
-    .scroll-image {
-        position: sticky;
-        top: 10%;
-        right: 10%;
-        width: 200px;
-        height: auto;
-        transition: all 0.3s ease-in-out;
-    }
+        .hidden-text {
+            opacity: 0;
+            /* Texte invisible au départ */
+            transform: translateY(30px);
+            /* Commence en bas */
+            font-size: 30px;
+            color: #333;
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
+        }
+    </style>
 
-    .scroll-image.maximized {
-        width: 400px;
-    }
+    <body>
+        <main
+            class="min-h-screen w-full bg-gray-100 text-gray-700"
+            x-data="layout"
+        >
+            <header
+                class="flex w-full items-center justify-between border-b-2 border-gray-200 bg-white p-2"
+            >
+                <div class="flex items-center space-x-2 p-4">
+                    <img src="assets/logo.png" class="h-20 w-20" alt="logo" />
+                </div>
 
-    .hidden-text {
-        opacity: 0;
-        /* Texte invisible au départ */
-        transform: translateY(30px);
-        /* Commence en bas */
-        font-size: 30px;
-        color: #333;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-</style>
+                <div class="flex items-center space-x-2 p-4">
+                    <h1 class="text-3xl font-bold">NDLI2024</h1>
+                </div>
 
-<body>
-    <main class="min-h-screen w-full bg-gray-100 text-gray-700" x-data="layout">
-        <header class="flex w-full items-center justify-between border-b-2 border-gray-200 bg-white p-2">
-            <div class="flex items-center space-x-2 p-4">
-                <img src="assets/logo.png" class="h-20 w-20" alt="logo" />
-            </div>
+                <div class="flex items-center space-x-2 p-4">
+                    <h1 class="text-xl font-bold">The Wild Robot</h1>
+                </div>
+            </header>
 
-            <div class="flex items-center space-x-2 p-4">
-                <h1 class="text-3xl font-bold">NDLI2024</h1>
-            </div>
+            <div class="flex">
+                <i
+                    class="i-heroicons-bars-3-16-solid text-3xl cursor-pointer m-2"
+                    @click="asideOpen = !asideOpen"
+                    x-show="!asideOpen"
+                ></i>
 
-            <div class="flex items-center space-x-2 p-4">
-                <h1 class="text-xl font-bold">The Wild Robot</h1>
-            </div>
-        </header>
+                <aside
+                    class="flex w-72 flex-col space-y-2 border-r-2 border-gray-200 bg-white p-2"
+                    style="height: 90.5vh"
+                    x-show="asideOpen"
+                >
+                    <i
+                        class="i-heroicons-bars-3-16-solid text-2xl cursor-pointer"
+                        @click="asideOpen = !asideOpen"
+                    ></i>
 
-        <div class="flex">
-            <i class="i-heroicons-bars-3-16-solid text-3xl cursor-pointer m-2" @click="asideOpen = !asideOpen"
-                x-show="!asideOpen"></i>
+                    <a
+                        href="#"
+                        class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600"
+                    >
+                        <i class="i-heroicons-home-16-solid h-7 w-7 mr-3"></i>
+                        <span>Immersion</span>
+                    </a>
 
-            <aside class="flex w-72 flex-col space-y-2 border-r-2 border-gray-200 bg-white p-2" style="height: 90.5vh"
-                x-show="asideOpen">
-                <i class="i-heroicons-bars-3-16-solid text-2xl cursor-pointer" @click="asideOpen = !asideOpen"></i>
+                    <a
+                        href="#"
+                        class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600"
+                    >
+                        <i
+                            class="i-heroicons-rocket-launch-16-solid h-7 w-7 mr-3"
+                        ></i>
+                        <span>Quiz</span>
+                    </a>
 
-                <a href="#"
-                    class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
-                    <i class="i-heroicons-home-16-solid h-7 w-7 mr-3"></i>
-                    <span>Immersion</span>
-                </a>
+                    <a
+                        href="#"
+                        class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600"
+                    >
+                        <i class="i-heroicons-key-20-solid h-7 w-7 mr-3"></i>
+                        <span>Cyber c'est super</span>
+                    </a>
 
-                <a href="#"
-                    class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
-                    <i class="i-heroicons-rocket-launch-16-solid h-7 w-7 mr-3"></i>
-                    <span>Quiz</span>
-                </a>
+                    <a
+                        href="#"
+                        class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600"
+                    >
+                        <i
+                            class="i-heroicons-adjustments-horizontal-solid h-7 w-7 mr-3"
+                        ></i>
+                        <span>Dashboard</span>
+                    </a>
 
-                <a href="#"
-                    class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
-                    <i class="i-heroicons-key-20-solid h-7 w-7 mr-3"></i>
-                    <span>Cyber c'est super</span>
-                </a>
+                    <a
+                        href="#"
+                        class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600"
+                    >
+                        <i class="i-heroicons-globe-americas h-7 w-7 mr-3"></i>
+                        <span>Exploration</span>
+                    </a>
+                </aside>
 
-                <a href="#"
-                    class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
-                    <i class="i-heroicons-adjustments-horizontal-solid h-7 w-7 mr-3"></i>
-                    <span>Dashboard</span>
-                </a>
+                <!-- main content page -->
+                <div class="w-full h-full p-4 flex gap-2 items-start">
+                    <div class="flex w-1/2 flex-grow h-full flex-col">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Expedita quam odit officiis magni doloribus
+                            ipsa dolore, dolores nihil accusantium labore,
+                            incidunt autem iure quae vitae voluptate, esse
+                            asperiores aliquam repellat. Harum aliquid non
+                            officiis porro at cumque eaque inventore iure. Modi
+                            sunt optio mollitia repellat sed ab quibusdam quos
+                            harum!
+                        </p>
 
-                <a href="#"
-                    class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
-                    <i class="i-heroicons-globe-americas h-7 w-7 mr-3"></i>
-                    <span>Exploration</span>
-                </a>
-            </aside>
+                        <h1 class="text-6xl">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Expedita quam odit officiis magni doloribus
+                            ipsa dolore, dolores nihil accusantium labore,
+                            incidunt autem iure quae vitae voluptate, esse
+                            asperiores aliquam repellat. Harum aliquid non
+                            officiis porro at cumque eaque inventore iure. Modi
+                            sunt optio mollitia repellat sed ab quibusdam quos
+                            harum!
+                        </h1>
 
-            <!-- main content page -->
-            <div class="w-full h-full p-4 flex flex-col gap-2">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita quam odit
-                    officiis
-                    magni doloribus ipsa dolore, dolores nihil accusantium labore, incidunt autem iure quae vitae
-                    voluptate,
-                    esse asperiores aliquam repellat. Harum aliquid non officiis porro at cumque eaque inventore iure.
-                    Modi
-                    sunt
-                    optio mollitia repellat sed ab quibusdam quos harum!
-                </p>
+                        <div
+                            id="scrollText"
+                            class="hidden-text mt-20 mb-20 border-2 p-4 bg-gray-200 rounded-lg"
+                        >
+                            C'est un texte stylisé qui apparaît avec un effet de
+                            défilement!
+                        </div>
 
-                <div id="hover-zone" class="relative w-96 h-96 rounded-lg">
-                    <!-- Image de base -->
-                    <img src="https://via.placeholder.com/800x800?text=Image+de+Base" alt="Base" class="base-image" />
+                        <h1 class="text-6xl">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Expedita quam odit officiis magni doloribus
+                            ipsa dolore, dolores nihil accusantium labore,
+                            incidunt autem iure quae vitae voluptate, esse
+                            asperiores aliquam repellat. Harum aliquid non
+                            officiis porro at cumque eaque inventore iure. Modi
+                            sunt optio mollitia repellat sed ab quibusdam quos
+                            harum!
+                        </h1>
+                    </div>
+
+                    <div class="sticky-container flex justify-end items-start">
+                        <img
+                            src="assets/body.svg"
+                            alt="Right Image"
+                            class="scroll-image h-fit"
+                            id="scrollImage"
+                        />
+                    </div>
+
+                    <!-- <div id="hover-zone" class="relative w-96 h-96 rounded-lg">
+                        <!-- Image de base -->
+                    <!-- <img
+                        src="https://via.placeholder.com/800x800?text=Image+de+Base"
+                        alt="Base"
+                        class="base-image"
+                    /> -->
                     <!-- Image au survol -->
-                    <img src="https://cdn.futura-sciences.com/sources/images/AI-creation.jpg" alt="Hover"
-                        class="hover-image" />
+                    <!-- <img
+                            src="https://cdn.futura-sciences.com/sources/images/AI-creation.jpg"
+                            alt="Hover"
+                            class="hover-image"
+                        />
+                    </div> -->
                 </div>
-                <div class="sticky-container flex justify-end items-start">
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D"
-                        alt="Right Image" class="scroll-image" id="scrollImage" />
-                </div>
-
-
-                <h1 class="text-6xl">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita quam odit
-                    officiis
-                    magni doloribus ipsa dolore, dolores nihil accusantium labore, incidunt autem iure quae vitae
-                    voluptate,
-                    esse asperiores aliquam repellat. Harum aliquid non officiis porro at cumque eaque inventore iure.
-                    Modi
-                    sunt
-                    optio mollitia repellat sed ab quibusdam quos harum!
-                </h1>
-
-                <div id="scrollText" class="hidden-text mt-20 mb-20 border-2 p-4 bg-gray-200 rounded-lg">
-                    C'est un texte stylisé qui apparaît avec un effet de défilement!
-                </div>
-
-                <h1 class="text-6xl">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita quam odit
-                    officiis
-                    magni doloribus ipsa dolore, dolores nihil accusantium labore, incidunt autem iure quae vitae
-                    voluptate,
-                    esse asperiores aliquam repellat. Harum aliquid non officiis porro at cumque eaque inventore iure.
-                    Modi
-                    sunt
-                    optio mollitia repellat sed ab quibusdam quos harum!
-                </h1>
-
-
-                <footer class="flex items-center justify-between border-t-2 border-gray-200 bg-white p-2">
+            </div>
+            <footer
+                    class="flex items-center justify-between border-t-2 border-gray-200 bg-white p-2"
+                >
                     <div class="flex items-center space-x-2 p-4">
                         <h1 class="text-xl font-bold">NDLI2024</h1>
 
@@ -210,23 +280,15 @@
                         <h1 class="text-xl font-bold">The Wild Robot</h1>
                     </div>
                 </footer>
-
             </div>
-
-
-
-
-        </div>
-    </main>
-    <script>
-        document.addEventListener("alpine:init", () => {
-            Alpine.data("layout", () => ({
-                profileOpen: false,
-                asideOpen: true,
-            }));
-        });
-    </script>
-
-</body>
-
+        </main>
+        <script>
+            document.addEventListener("alpine:init", () => {
+                Alpine.data("layout", () => ({
+                    profileOpen: false,
+                    asideOpen: true,
+                }));
+            });
+        </script>
+    </body>
 </html>

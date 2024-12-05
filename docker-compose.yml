@@ -6,3 +6,16 @@ services:
     ports:
       - "8800:80"
     restart: unless-stopped
+    networks:
+      - ndi
+
+  nginx-exporter:
+    image: nginx/nginx-prometheus-exporter:latest
+    command:
+      - -nginx.scrape-uri
+      - http://nginx:8080/stub_status
+    networks:
+      - ndi
+
+networks:
+  ndi:

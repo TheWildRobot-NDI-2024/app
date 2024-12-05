@@ -64,15 +64,22 @@
         clip-path: circle(50% at 50% 50%);
     }
 
+    .sticky-container {
+        position: relative;
+        height: 200vh;
+    }
+
     .scroll-image {
-        position: fixed;
-        top: 50%;
+        position: sticky;
+        top: 10%;
         right: 10%;
-        transform: translateY(-50%);
         width: 200px;
-        /* Taille initiale */
-        transition: none;
-        z-index: 10;
+        height: auto;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .scroll-image.maximized {
+        width: 400px;
     }
 
     .hidden-text {
@@ -160,9 +167,10 @@
                     <img src="https://cdn.futura-sciences.com/sources/images/AI-creation.jpg" alt="Hover"
                         class="hover-image" />
                 </div>
-
-                <img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp"
-                    alt="Right Image" class="scroll-image" id="scrollImage" />
+                <div class="sticky-container flex justify-end items-start">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D"
+                        alt="Right Image" class="scroll-image" id="scrollImage" />
+                </div>
 
 
                 <h1 class="text-6xl">
@@ -179,6 +187,18 @@
                 <div id="scrollText" class="hidden-text mt-20 mb-20 border-2 p-4 bg-gray-200 rounded-lg">
                     C'est un texte stylisé qui apparaît avec un effet de défilement!
                 </div>
+
+                <h1 class="text-6xl">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita quam odit
+                    officiis
+                    magni doloribus ipsa dolore, dolores nihil accusantium labore, incidunt autem iure quae vitae
+                    voluptate,
+                    esse asperiores aliquam repellat. Harum aliquid non officiis porro at cumque eaque inventore iure.
+                    Modi
+                    sunt
+                    optio mollitia repellat sed ab quibusdam quos harum!
+                </h1>
+
 
                 <footer class="flex items-center justify-between border-t-2 border-gray-200 bg-white p-2">
                     <div class="flex items-center space-x-2 p-4">

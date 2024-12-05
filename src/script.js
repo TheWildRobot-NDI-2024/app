@@ -16,6 +16,7 @@ hoverZone.addEventListener('mouseleave', () => {
 
 // ANIMATION AGRANDISSEMENT IMAGE
 const image = document.getElementById('scrollImage');
+const text = document.getElementById('scrollText');
 
 window.addEventListener('scroll', function () {
     const scrollPosition = window.scrollY; // position de défilement verticale
@@ -24,14 +25,27 @@ window.addEventListener('scroll', function () {
 
     const newTopPosition = 50 + scrollPosition * 0.05; // plus on descend, plus l'image descend
 
-    image.style.width = `${newSize}px`;
-    image.style.top = `${newTopPosition}%`;
+    const maxSize = 400;
+    const maxPosition = 80;
+
+    if (newSize > maxSize) {
+        image.style.width = `${maxSize}px`;
+    } else {
+        image.style.width = `${newSize}px`;
+    }
+
+    if (newTopPosition > maxPosition) {
+        image.style.top = `${maxPosition}%`;
+    } else {
+        image.style.top = `${newTopPosition}%`;
+    }
+
     console.log(scrollPosition);
 
     // ANIMATION TEXTE APPARITION SCROLL
-    if (scrollPosition > 850) {
-        gsap.to(text, { opacity: 1, y: 0, duration: 1, ease: 'power3.out' });
+    if (950 < scrollPosition && scrollPosition < 1300) {
+        gsap.to(text, { opacity: 1, y: 0, duration: 0.2, ease: 'power3.out' });
     } else {
-        gsap.to(text, { opacity: 0, y: 30, duration: 1, ease: 'power3.in' });
+        gsap.to(text, { opacity: 0, y: 30, duration: 0.2, ease: 'power3.in' });
     }
 });

@@ -3,11 +3,16 @@ name: Create and publish a Docker image
 on:
   push:
     tags:
-      - '**'  # Pattern matched against refs/tags
+      - "**" # Pattern matched against refs/tags
 
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+
+permissions:
+  contents: read # Needed for checking out the repository
+  packages: write # Needed for publishing Docker images
+  actions: write # Needed for caching via GitHub Actions
 
 jobs:
   build-and-publish-image:
@@ -18,7 +23,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          submodules: true 
+          submodules: true
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -39,7 +44,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
-      - name: Build and push Docker image 
+      - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .

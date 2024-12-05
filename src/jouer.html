@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notre site pour la nuit de l'info 2024, équipe TheWildRobot">
+    <meta name="author" content="NDLI2024">
+
+    <!-- Open Graph (for social sharing) -->
+    <meta property="og:title" content="NDLI2024 - TheWildRobot">
+    <meta property="og:description" content="Notre site pour la nuit de l'info 2024, équipe TheWildRobot">
+    <meta property="og:image" content="/assets/logo.png">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NDLI2024 - TheWildRobot">
+    <meta name="twitter:description" content="Notre site pour la nuit de l'info 2024, équipe TheWildRobot">
+    <meta name="twitter:image" content="/assets/logo.png">
+
+    <title>NDLI2024 - TheWildRobot</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="manifest" href="./assets/site.webmanifest">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./output.css" />
+    <script defer src="./assets/alpinejs.js"></script>
+    <script defer src="./assets/gsap.js"></script>
+    <script defer src="script-jouer.js"></script>
+
+</head>
+
+<style>
+    #hover-zone {
+        position: relative;
+        overflow: hidden;
+        width: 300px;
+        height: 300px;
+    }
+
+    .base-image,
+    .hover-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: clip-path 0.2s ease-out;
+    }
+
+    .hover-image {
+        clip-path: circle(0% at 50% 50%);
+        z-index: 1;
+    }
+
+    #hover-zone:hover .hover-image {
+        clip-path: circle(50% at 50% 50%);
+    }
+
+    .sticky-container {
+        position: relative;
+        height: 200vh;
+    }
+
+    .scroll-image {
+        position: sticky;
+        top: 10%;
+        right: 10%;
+        width: 200px;
+        height: auto;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .scroll-image.maximized {
+        width: 400px;
+    }
+
+    .hidden-text {
+        opacity: 0;
+        /* Texte invisible au départ */
+        transform: translateY(30px);
+        /* Commence en bas */
+        font-size: 30px;
+        color: #333;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+</style>
+
+<body>
+    <main class="min-h-screen w-full bg-gray-100 text-gray-700" x-data="layout">
+        <header class="flex w-full items-center justify-between border-b-2 border-gray-200 bg-white p-2">
+            <div class="flex items-center space-x-2 p-4">
+                <img src="assets/logo.png" class="h-20 w-20" alt="logo" />
+            </div>
+
+            <div class="flex items-center space-x-2 p-4">
+                <h1 class="text-3xl font-bold">NDLI2024</h1>
+            </div>
+
+            <div class="flex items-center space-x-2 p-4">
+                <h1 class="text-xl font-bold">The Wild Robot</h1>
+            </div>
+        </header>
+
+        <div class="flex">
+            <i class="i-heroicons-bars-3-16-solid text-3xl cursor-pointer m-2" @click="asideOpen = !asideOpen"
+                x-show="!asideOpen"></i>
+
+            <aside class="flex w-72 flex-col space-y-2 border-r-2 border-gray-200 bg-white p-2" style="height: 90.5vh"
+                x-show="asideOpen">
+                <i class="i-heroicons-bars-3-16-solid text-2xl cursor-pointer" @click="asideOpen = !asideOpen"></i>
+
+                <a href="index.html"
+                    class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
+                    <i class="i-heroicons-home-16-solid h-7 w-7 mr-3"></i>
+                    <span>Immersion</span>
+                </a>
+
+                <a href="#"
+                    class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
+                    <i class="i-heroicons-rocket-launch-16-solid h-7 w-7 mr-3"></i>
+                    <span>Quiz</span>
+                </a>
+
+                <a href="#"
+                    class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
+                    <i class="i-heroicons-key-20-solid h-7 w-7 mr-3"></i>
+                    <span>Cyber c'est super</span>
+                </a>
+
+                <a href="#"
+                    class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
+                    <i class="i-heroicons-adjustments-horizontal-solid h-7 w-7 mr-3"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="#"
+                    class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
+                    <i class="i-heroicons-globe-americas h-7 w-7 mr-3"></i>
+                    <span>Exploration</span>
+                </a>
+            </aside>
+
+            <!-- main content page -->
+            <div class="w-full h-full flex flex-col justify-center items-center p-4 gap-4">
+                <!-- Section principale -->
+                <div class="flex flex-wrap justify-center items-start gap-8">
+                    <!-- Colonne gauche -->
+                    <div id="leftColumn"
+                        class="flex flex-col gap-4 border-2 border-gray-300 rounded-lg p-4 bg-white w-44 sm:w-64">
+                        <div class="item bg-green-500 text-white text-center py-2 rounded-lg cursor-grab z-10"
+                            data-column="left" draggable="true" data-id="cerveau">Cerveau</div>
+                        <div class="item bg-green-500 text-white text-center py-2 rounded-lg cursor-grab z-10"
+                            data-column="left" draggable="true" data-id="coeur">Coeur</div>
+                        <div class="item bg-green-500 text-white text-center py-2 rounded-lg cursor-grab z-10"
+                            data-column="left" draggable="true" data-id="poumons">Poumons</div>
+                        <div class="item bg-green-500 text-white text-center py-2 rounded-lg cursor-grab z-10"
+                            data-column="left" draggable="true" data-id="mains">Mains</div>
+                        <div class="item bg-green-500 text-white text-center py-2 rounded-lg cursor-grab z-10"
+                            data-column="left" draggable="true" data-id="pieds">Pieds</div>
+                    </div>
+
+                    <!-- Zone de drop -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="relative drop-zone border-2 border-dashed border-gray-400 bg-gray-50 w-56 h-56 flex flex-col items-center justify-center rounded-lg gap-2"
+                            id="box1">
+                            <p class="absolute mt-2 -z-[0]">Biodiversité marine</p>
+                        </div>
+                        <div class="drop-zone border-2 border-dashed border-gray-400 bg-gray-50 w-56 h-56 flex flex-col items-center justify-center rounded-lg gap-2"
+                            id="box2">
+                            <p class="absolute mt-2 -z-[0]">Courants marins</p>
+                        </div>
+                        <div class="drop-zone border-2 border-dashed border-gray-400 bg-gray-50 w-56 h-56 flex flex-col items-center justify-center rounded-lg gap-2"
+                            id="box3">
+                            <p class="absolute mt-2 -z-[0]">Plancton</p>
+                        </div>
+                        <div class="drop-zone border-2 border-dashed border-gray-400 bg-gray-50 w-56 h-56 flex flex-col items-center justify-center rounded-lg gap-2"
+                            id="box4">
+                            <p class="absolute mt-2 -z-[0]">Coraux</p>
+                        </div>
+                        <div class="drop-zone border-2 border-dashed border-gray-400 bg-gray-50 w-56 h-56 flex flex-col items-center justify-center rounded-lg gap-2"
+                            id="box5">
+                            <p class="absolute mt-2 -z-[0]">Ecosystème marin</p>
+                        </div>
+                    </div>
+
+                    <!-- Colonne droite -->
+                    <div id="rightColumn"
+                        class="flex flex-col gap-4 border-2 border-gray-300 rounded-lg p-4 bg-white w-44 sm:w-64">
+                        <div class="item bg-green-500 text-white text-center py-2 rounded-lg cursor-grab z-10"
+                            data-column="right" draggable="true" data-id="necessite">Nécessité de chaque membre/espèce
+                            pour la survie</div>
+                        <div class="item bg-green-500 text-white text-center py-2 rounded-lg cursor-grab z-10"
+                            data-column="right" draggable="true" data-id="critique">Critique aux changements de rythme
+                        </div>
+                        <div class="item bg-green-500 text-white text-center py-2 rounded-lg cursor-grab z-10"
+                            data-column="right" draggable="true" data-id="systeme">Système respiratoire</div>
+                        <div class="item bg-green-500 text-white text-center py-2 rounded-lg cursor-grab z-10"
+                            data-column="right" draggable="true" data-id="ondes">Sensible aux ondes</div>
+                        <div class="item bg-green-500 text-white text-center py-2 rounded-lg cursor-grab z-10"
+                            data-column="right" draggable="true" data-id="temp">Sensible aux changements de température
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <button id="submitButton"
+                            class="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg">
+                            Vérifier les paires
+                        </button>
+
+                        <button id="resetButton"
+                            class="px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-bold rounded-lg">
+                            Réinitialiser
+                        </button>
+
+                        <button id="helpButton" @click="openHelp = !openHelp"
+                            class="px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-lg">
+                            Voir toutes les explications
+                        </button>
+                        <p id="resultMessage" class="mt-4 text-lg font-medium text-gray-800 hidden"></p>
+                    </div>
+
+                </div>
+                <div id="helpMessage" class="text-lg flex flex-col gap-2 font-medium text-gray-800" x-show="openHelp">
+                    <p> <span class="underline font-bold">Cerveau:</span> Le cerveau humain est encore très incompris. À
+                        l'heure
+                        actuelle, le fond marin est une zone moins explorée que la Lune. Un à deux tiers des espaces
+                        marins
+                        restent inconnus. Mais de nombreuses espèces subissent les conséquences du trafic maritime et
+                        des
+                        déversements de produits toxiques dans les océans.
+                    </p>
+                    <p> <span class="underline font-bold">Coeur:</span> Un cœur stable qui bat à un rythme régulier est
+                        un signe de
+                        bonne santé. Les courants marins sont l'analogie parfaite : les cyclones et anticyclones sont
+                        essentiels pour maintenir les saisons telles que nous les connaissons. Le réchauffement des eaux
+                        augmente le delta de température, perturbe les phénomènes météorologiques et les rend plus
+                        fréquents.
+                    </p>
+                    <p> <span class="underline font-bold">Poumons:</span> Les poumons des humains sont des éponges très
+                        fragiles,
+                        et des dépôts dégradent rapidement leur efficacité. Au mieux, dans les océans, les planctons,
+                        qui
+                        représentent 50% de l'oxygène produit sur Terre, sont grandement affaiblis par l'acidification
+                        des
+                        océans.
+                    </p>
+                    <p> <span class="underline font-bold">Mains:</span> La partie la plus sensible au froid du corps est
+                        les mains.
+                        Tout comme les coraux, qui sont les premiers à réagir aux changements de température de l'océan.
+                        Les
+                        conséquences sont immédiates : blanchiment des coraux, ce qui engendre la disparition de tout un
+                        écosystème marin.
+                    </p>
+                    <p> <span class="underline font-bold">Pieds:</span> Nos membres nous sont chers, pour nous nourrir
+                        ou encore
+                        marcher. De la même manière, dans l'océan, retirer ou réduire une population d'individus rend la
+                        survie de la biodiversité dans son ensemble très compliquée, voire impossible. C'est un
+                        écosystème
+                        très minutieux.</p>
+                </div>
+
+            </div>
+
+    </main>
+    <script>
+        document.addEventListener("alpine:init", () => {
+            Alpine.data("layout", () => ({
+                profileOpen: false,
+                asideOpen: true,
+                openHelp: false
+            }));
+        });
+    </script>
+
+</body>
+
+</html>

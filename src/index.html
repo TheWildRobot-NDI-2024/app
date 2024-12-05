@@ -31,8 +31,60 @@
     <!-- Styles -->
     <link rel="stylesheet" href="./output.css" />
     <script defer src="./assets/alpinejs.js"></script>
+    <script defer src="./assets/gsap.js"></script>
+    <script defer src="script.js"></script>
 
 </head>
+
+<style>
+    #hover-zone {
+        position: relative;
+        overflow: hidden;
+        width: 300px;
+        height: 300px;
+    }
+
+    .base-image,
+    .hover-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: clip-path 0.2s ease-out;
+    }
+
+    .hover-image {
+        clip-path: circle(0% at 50% 50%);
+        z-index: 1;
+    }
+
+    #hover-zone:hover .hover-image {
+        clip-path: circle(50% at 50% 50%);
+    }
+
+    .scroll-image {
+        position: fixed;
+        top: 50%;
+        right: 10%;
+        transform: translateY(-50%);
+        width: 200px;
+        /* Taille initiale */
+        transition: none;
+        z-index: 10;
+    }
+
+    .hidden-text {
+        opacity: 0;
+        /* Texte invisible au départ */
+        transform: translateY(30px);
+        /* Commence en bas */
+        font-size: 30px;
+        color: #333;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+</style>
 
 <body>
     <main class="min-h-screen w-full bg-gray-100 text-gray-700" x-data="layout">
@@ -90,12 +142,60 @@
             </aside>
 
             <!-- main content page -->
-            <div class="w-full p-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita quam odit
-                officiis
-                magni doloribus ipsa dolore, dolores nihil accusantium labore, incidunt autem iure quae vitae voluptate,
-                esse asperiores aliquam repellat. Harum aliquid non officiis porro at cumque eaque inventore iure. Modi
-                sunt
-                optio mollitia repellat sed ab quibusdam quos harum!</div>
+            <div class="w-full h-full p-4 flex flex-col gap-2">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita quam odit
+                    officiis
+                    magni doloribus ipsa dolore, dolores nihil accusantium labore, incidunt autem iure quae vitae
+                    voluptate,
+                    esse asperiores aliquam repellat. Harum aliquid non officiis porro at cumque eaque inventore iure.
+                    Modi
+                    sunt
+                    optio mollitia repellat sed ab quibusdam quos harum!
+                </p>
+
+                <div id="hover-zone" class="relative w-96 h-96 rounded-lg">
+                    <!-- Image de base -->
+                    <img src="https://via.placeholder.com/800x800?text=Image+de+Base" alt="Base" class="base-image" />
+                    <!-- Image au survol -->
+                    <img src="https://cdn.futura-sciences.com/sources/images/AI-creation.jpg" alt="Hover"
+                        class="hover-image" />
+                </div>
+
+                <img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp"
+                    alt="Right Image" class="scroll-image" id="scrollImage" />
+
+
+                <h1 class="text-6xl">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita quam odit
+                    officiis
+                    magni doloribus ipsa dolore, dolores nihil accusantium labore, incidunt autem iure quae vitae
+                    voluptate,
+                    esse asperiores aliquam repellat. Harum aliquid non officiis porro at cumque eaque inventore iure.
+                    Modi
+                    sunt
+                    optio mollitia repellat sed ab quibusdam quos harum!
+                </h1>
+
+                <div id="scrollText" class="hidden-text mt-20 mb-20 border-2 p-4 bg-gray-200 rounded-lg">
+                    C'est un texte stylisé qui apparaît avec un effet de défilement!
+                </div>
+
+                <footer class="flex items-center justify-between border-t-2 border-gray-200 bg-white p-2">
+                    <div class="flex items-center space-x-2 p-4">
+                        <h1 class="text-xl font-bold">NDLI2024</h1>
+
+                        <p class="text-sm">© 2024 NDLI2024</p>
+                    </div>
+                    <div class="flex items-center space-x-2 p-4">
+                        <h1 class="text-xl font-bold">The Wild Robot</h1>
+                    </div>
+                </footer>
+
+            </div>
+
+
+
+
         </div>
     </main>
     <script>

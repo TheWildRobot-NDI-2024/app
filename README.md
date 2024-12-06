@@ -1,12 +1,11 @@
 <div align="center">
-  <img width=200 alt="NDLI 2024 TheWildRobot" src="./src/assets/logo.png">
+  <img width=200 alt="NDI 2024 TheWildRobot" src="./src/assets/logo.png">
 
-  # NDLI 2024 TheWildRobot
+# NDI 2024 TheWildRobot
 
-  Projet de  LE GALL Bastien, JARA Rémi, SALL Idrissa, MAEGHT Loan
+Projet de LE GALL Bastien, JARA Rémi, SALL Idrissa, MAEGHT Loan
 
 </div>
-
 
 [Le site](https://jadoreleau.com/) est un site de sensibilisation à la pollution des océans.
 Le défi principal du projet se trouve dans la [page d'accueil](https://jadoreleau.com/index.html), et la [page jeu](https://jadoreleau.com/jouer.html) qui permettent d'apprendre les similitudes entre les humains et les océans puis de vérifier ses connaissances sur le quiz.
@@ -78,6 +77,7 @@ Pour les deux services :
 -   [x] [Plausible](https://plausible.jadoreleau.com) Surveillance des visites, pages vues, etc.
 
 ## La cyber c'est super ! (défi La cyber c'est super !)
+
 On a choisi ce défi car nous trouvvons que la cybersécurité est un enjeu majeur dans le monde actuel. Nous avons donc décidé de mettre en place un système de sécurité pour notre site. Nous cherchons à travers ce défi à sensibiliser les utilisateurs à la cybersécurité de manière ludique.
 
 -   [x] [Cyber](https://jadoreleau.com/cyber-cest-super.html) Jeu de cybersécurité
@@ -86,8 +86,6 @@ On a choisi ce défi car nous trouvvons que la cybersécurité est un enjeu maje
 
 ![Cyber](./cyber.png)
 ![Cyber](./cyber2.png)
-
-
 
 Identifiants :
 

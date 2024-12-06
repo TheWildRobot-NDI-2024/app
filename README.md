@@ -36,3 +36,10 @@ Pour les deux services :
 
 -   **Utilisateur** : admin
 -   **Mot de passe** : ZVWE?S#2'8Hy3x.
+
+## Enquête sur les Données : Devenez un Sherlock des Statistiques ! (défi Enquête sur les données)
+-   [x] [Plausible](https://plausible.jadoreleau.com) Surveillance des visites, pages vues, etc.
+
+Identifiants :
+-  **Utilisateur** : admin
+-  **Mot de passe** : ZVWE?S#2'8Hy3x.

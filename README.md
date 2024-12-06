@@ -61,8 +61,8 @@ Pour les deux services :
 
 ### Illustration
 
--   [![Dashboard](./dashboard.png)]
--   [![Uptime](./uptime.png)]
+-   ![Dashboard](./dashboard.png)
+-   ![Uptime](./uptime.png)
 
 ## Enquête sur les Données : Devenez un Sherlock des Statistiques ! (défi Enquête sur les données)
 
@@ -84,4 +84,4 @@ Identifiants :
 
 ### Illustration
 
--   [![Plausible](./plausible.png)]
+-   ![Plausible](./plausible.png)

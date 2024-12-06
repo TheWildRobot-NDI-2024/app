@@ -46,8 +46,12 @@ window.addEventListener('scroll', function () {
 
     // Effet de transparence avec un léger mouvement vers le haut
     if (!ticking) {
+        const windowWidth = window.innerWidth;
         window.requestAnimationFrame(() => {
             const animateText = (element, start, end) => {
+                if (windowWidth < 768) {
+                    return;
+                }
                 if (scrollPosition > start && scrollPosition < end) {
                     gsap.to(element, {
                         opacity: 1,

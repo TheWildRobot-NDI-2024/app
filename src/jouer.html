@@ -116,11 +116,11 @@
             </div>
         </header>
 
-        <div class="flex">
+        <div class="flex flex-col sm:flex-row">
             <i class="i-heroicons-bars-3-16-solid text-3xl cursor-pointer m-2" @click="asideOpen = !asideOpen"
                 x-show="!asideOpen"></i>
 
-            <aside class="flex w-72 flex-col space-y-2 p-2" style="height: 90.5vh" x-show="asideOpen">
+            <aside class="w-full sm:flex sm:w-72 flex-col space-y-2 p-2 h-auto sm:h-[90vh]" x-show="asideOpen">
                 <i class="i-heroicons-bars-3-16-solid text-2xl cursor-pointer" @click="asideOpen = !asideOpen"></i>
 
                 <a href="index.html"
@@ -157,7 +157,23 @@
             <!-- main content page -->
             <div class="w-full h-full flex flex-col justify-center items-center p-4 gap-4">
                 <!-- Section principale -->
-                <div class="flex flex-wrap justify-center items-start gap-8">
+                <div class="flex flex-col items-start justify-start w-full gap-4">
+
+                    <h1 class="text-3xl font-bold text-gray-800">Jouer</h1>
+
+                    <div class="bg-blue-200 p-4 rounded-xl">
+                        <p class="text-lg  text-gray-800">Faites correspondre les éléments de chaque colonne pour
+                            former des paires cohérentes.</p>
+                        <p class="text-lg  text-gray-800">Glissez-déposez les éléments de la colonne de gauche vers
+                            les zones de drop et faites de même avec les éléments de la colonne de droite pour former
+                            des
+                            paires
+                            cohérentes.</p>
+                    </div>
+                </div>
+
+
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-8">
                     <!-- Colonne gauche -->
                     <div id="leftColumn"
                         class="flex flex-col gap-4 border-2 border-gray-300 rounded-lg p-4 bg-white w-44 sm:w-64">
@@ -174,26 +190,26 @@
                     </div>
 
                     <!-- Zone de drop -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                        <div class="relative drop-zone p-4 border-2 border-dashed border-gray-400 bg-gray-50 w-56 h-56 flex flex-col items-center justify-center rounded-lg gap-2"
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="relative drop-zone p-4 border-2 border-dashed border-gray-400 bg-gray-50 w-36 sm:w-56 h-36 sm:h-56 flex flex-col items-center justify-center rounded-lg gap-2"
                             id="box1">
-                            <p class="absolute mt-2 -z-[0]">Biodiversité marine</p>
+                            <p class="absolute mt-2 -z-[0] text-sm sm:text-md text-center">Biodiversité marine</p>
                         </div>
-                        <div class="drop-zone border-2 p-4 border-dashed border-gray-400 bg-gray-50 w-56 h-56 flex flex-col items-center justify-center rounded-lg gap-2"
+                        <div class="drop-zone border-2 p-4 border-dashed border-gray-400 bg-gray-50 w-36 sm:w-56 h-36 sm:h-56 flex flex-col items-center justify-center rounded-lg gap-2"
                             id="box2">
-                            <p class="absolute mt-2 -z-[0]">Courants marins</p>
+                            <p class="absolute mt-2 -z-[0] text-sm sm:text-md text-center">Courants marins</p>
                         </div>
-                        <div class="drop-zone border-2 p-4 border-dashed border-gray-400 bg-gray-50 w-56 h-56 flex flex-col items-center justify-center rounded-lg gap-2"
+                        <div class="drop-zone border-2 p-4 border-dashed border-gray-400 bg-gray-50 w-36 sm:w-56 h-36 sm:h-56 flex flex-col items-center justify-center rounded-lg gap-2"
                             id="box3">
-                            <p class="absolute mt-2 -z-[0]">Plancton</p>
+                            <p class="absolute mt-2 -z-[0] text-sm sm:text-md text-center">Plancton</p>
                         </div>
-                        <div class="drop-zone border-2 p-4 border-dashed border-gray-400 bg-gray-50 w-56 h-56 flex flex-col items-center justify-center rounded-lg gap-2"
+                        <div class="drop-zone border-2 p-4 border-dashed border-gray-400 bg-gray-50 w-36 sm:w-56 h-36 sm:h-56 flex flex-col items-center justify-center rounded-lg gap-2"
                             id="box4">
-                            <p class="absolute mt-2 -z-[0]">Coraux</p>
+                            <p class="absolute mt-2 -z-[0] text-sm sm:text-md text-center">Coraux</p>
                         </div>
-                        <div class="drop-zone border-2 p-4 border-dashed border-gray-400 bg-gray-50 w-56 h-56 flex flex-col items-center justify-center rounded-lg gap-2"
+                        <div class="drop-zone border-2 p-4 border-dashed border-gray-400 bg-gray-50 w-36 sm:w-56 h-36 sm:h-56 flex flex-col items-center justify-center rounded-lg gap-2"
                             id="box5">
-                            <p class="absolute mt-2 -z-[0]">Ecosystème marin</p>
+                            <p class="absolute mt-2 -z-[0] text-sm sm:text-md text-center">Ecosystème marin</p>
                         </div>
                     </div>
 
@@ -215,27 +231,29 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-col gap-2">
-                        <button id="submitButton"
-                            class="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg">
-                            Vérifier les paires
-                        </button>
 
-                        <button id="resetButton"
-                            class="px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-bold rounded-lg">
-                            Réinitialiser
-                        </button>
-
-                        <button id="helpButton" @click="openHelp = !openHelp"
-                            class="px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-lg">
-                            Voir toutes les explications
-                        </button>
-                        <p id="resultMessage" class="mt-4 text-lg font-medium text-gray-800 hidden"></p>
-                    </div>
 
                 </div>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button id="submitButton"
+                        class="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg">
+                        Vérifier les paires
+                    </button>
+
+                    <button id="resetButton"
+                        class="px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-bold rounded-lg">
+                        Réinitialiser
+                    </button>
+
+                    <button id="helpButton" @click="openHelp = !openHelp"
+                        class="px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-lg">
+                        Voir toutes les explications
+                    </button>
+                    <p id="resultMessage" class="mt-4 text-lg font-medium text-gray-800 hidden"></p>
+                </div>
                 <div id="helpMessage" class="text-lg flex flex-col gap-2 font-medium text-gray-800" x-show="openHelp">
-                    <p> <span class="underline font-bold">Cerveau:</span> Le cerveau humain est encore très incompris. À
+                    <p class="bg-blue-200 p-4 rounded-xl"> <span class="underline font-bold">Cerveau:</span> Le cerveau
+                        humain est encore très incompris. À
                         l'heure
                         actuelle, le fond marin est une zone moins explorée que la Lune. Un à deux tiers des espaces
                         marins
@@ -243,14 +261,16 @@
                         des
                         déversements de produits toxiques dans les océans.
                     </p>
-                    <p> <span class="underline font-bold">Coeur:</span> Un cœur stable qui bat à un rythme régulier est
+                    <p class="bg-blue-200 p-4 rounded-xl"> <span class="underline font-bold">Coeur:</span> Un cœur
+                        stable qui bat à un rythme régulier est
                         un signe de
                         bonne santé. Les courants marins sont l'analogie parfaite : les cyclones et anticyclones sont
                         essentiels pour maintenir les saisons telles que nous les connaissons. Le réchauffement des eaux
                         augmente le delta de température, perturbe les phénomènes météorologiques et les rend plus
                         fréquents.
                     </p>
-                    <p> <span class="underline font-bold">Poumons:</span> Les poumons des humains sont des éponges très
+                    <p class="bg-blue-200 p-4 rounded-xl"> <span class="underline font-bold">Poumons:</span> Les poumons
+                        des humains sont des éponges très
                         fragiles,
                         et des dépôts dégradent rapidement leur efficacité. Au mieux, dans les océans, les planctons,
                         qui
@@ -258,14 +278,16 @@
                         des
                         océans.
                     </p>
-                    <p> <span class="underline font-bold">Mains:</span> La partie la plus sensible au froid du corps est
+                    <p class="bg-blue-200 p-4 rounded-xl"> <span class="underline font-bold">Mains:</span> La partie la
+                        plus sensible au froid du corps est
                         les mains.
                         Tout comme les coraux, qui sont les premiers à réagir aux changements de température de l'océan.
                         Les
                         conséquences sont immédiates : blanchiment des coraux, ce qui engendre la disparition de tout un
                         écosystème marin.
                     </p>
-                    <p> <span class="underline font-bold">Pieds:</span> Nos membres nous sont chers, pour nous nourrir
+                    <p class="bg-blue-200 p-4 rounded-xl"> <span class="underline font-bold">Pieds:</span> Nos membres
+                        nous sont chers, pour nous nourrir
                         ou encore
                         marcher. De la même manière, dans l'océan, retirer ou réduire une population d'individus rend la
                         survie de la biodiversité dans son ensemble très compliquée, voire impossible. C'est un
@@ -277,10 +299,11 @@
 
     </main>
     <script>
+        let smallScreen = window.matchMedia("(max-width: 640px)");
         document.addEventListener("alpine:init", () => {
             Alpine.data("layout", () => ({
                 profileOpen: false,
-                asideOpen: true,
+                asideOpen: !smallScreen.matches,
                 openHelp: false
             }));
         });

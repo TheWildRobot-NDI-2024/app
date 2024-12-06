@@ -10,7 +10,7 @@
   <script defer src="./assets/scripts/cyber-cest-super.js"></script>
 
 </head>
-<body class="bg-black text-white flex flex-col items-center justify-center" >
+<body class="bg-black text-white flex flex-col items-center justify-center overflow-x-hidden" >
 
   <!-- Titre principal -->
   <div class="bg-black text-white flex flex-col items-center justify-center h-[120vh]">
@@ -55,7 +55,7 @@
     <!-- Boutons -->
     <div id="start-buttons" class="flex space-x-4 opacity-0">
       <button id="start-level-1" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-6 rounded">
-        Oui, prêt à commencer
+        Commençons !
       </button>
     </div>
   </div>
@@ -69,8 +69,8 @@
   </div>
   
   <!-- Sensibilisation -->
-  <div class="relative w-full h-[50vh] mb-10">
-    <div id="level-1-info" class="w-[45vw] h-[50vh] text-left mb-10 absolute top-0 left-5 flex flex-col justify-center bg-gray-800 p-6 rounded-lg shadow-lg">
+  <div id="level-1-info" class="relative w-full h-[50vh] mb-10 opacity-0">
+    <div class="w-[45vw] h-[50vh] text-left mb-10 absolute top-0 left-5 flex flex-col justify-center bg-gray-800 p-6 rounded-lg shadow-lg">
       <h3 class="text-2xl font-semibold mb-4 text-white">🚨 Qu'est-ce que le phishing ?</h3>
       <p class="text-lg mb-6 text-gray-300">
         Le phishing est une technique de fraude où les cybercriminels se font passer pour des entités légitimes pour voler vos informations personnelles. Ils utilisent souvent des emails ou des messages pour :
@@ -85,42 +85,46 @@
       </p>
     </div>
   </div>
-  
 
-   <!-- Email suspect à analyser -->
-  <div class="relative w-full h-[50vh] my-20">
-    <div id="level-1-info" class="w-[45vw] h-[50vh] text-left mb-10 absolute top-0 right-5 flex flex-col justify-center bg-gray-800 p-6 rounded-lg shadow-lg">
-    
-    <h3 class="text-2xl font-semibold mb-4">🔍 Exemple d'email suspect :</h3>
-    <p class="mb-4">
-      De : <span class="text-red-400">support@banque-fake.com</span><br>
-      Objet : <span class="text-yellow-400">"URGENT : Votre compte sera suspendu !"</span>
-    </p>
-    <p>
-      Bonjour,<br>
-      Nous avons détecté une activité inhabituelle sur votre compte. Veuillez confirmer vos informations en cliquant sur ce lien :<br>
-      <a href="#" class="text-blue-400 underline">www.banque-fake.com/verif</a><br>
-      Si vous ne répondez pas sous 24 heures, votre compte sera désactivé.<br>
-      Merci,<br>
-      Support Client
-    </p>
-  </div>
+  <!-- Email suspect à analyser -->
+  <div id="level-1-mailsuspect" class="relative w-full h-[50vh] my-20 opacity-0">
+    <div class="w-[45vw] h-[50vh] text-left mb-10 absolute top-0 right-5 flex flex-col justify-center bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h3 class="text-2xl font-semibold mb-4">🔍 Exemple d'email suspect :</h3>
+      <p class="mb-4">
+        De : <span class="text-red-400">support@banque-fake.com</span><br>
+        Objet : <span class="text-yellow-400">"URGENT : Votre compte sera suspendu !"</span>
+      </p>
+      <p>
+        Bonjour,<br>
+        Nous avons détecté une activité inhabituelle sur votre compte. Veuillez confirmer vos informations en cliquant sur ce lien :<br>
+        <a href="#" class="text-blue-400 underline">www.banque-fake.com/verif</a><br>
+        Si vous ne répondez pas sous 24 heures, votre compte sera désactivé.<br>
+        Merci,<br>
+        Support Client
+      </p>
+    </div>
   </div>
 
-   <!-- Question Quiz -->
-   <div id="quiz" class="max-w-4xl text-center my-20">
-    <h3 class="text-2xl font-semibold mb-4">❓ Question :</h3>
-    <p class="text-lg mb-6">Quel élément de cet email est le plus suspect ?</p>
-    <button id="quiz-answer-1" class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded m-2">
-      L'adresse email de l'expéditeur
-    </button>
-    <button id="quiz-answer-2" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded m-2">
-      Le lien de vérification
-    </button>
-    <button id="quiz-answer-3" class="bg-yellow-500 hover:bg-yellow-700 text-white py-2 px-4 rounded m-2">
-      L'urgence dans le message
-    </button>
+  <!-- Question Quiz -->
+  <div id="quiz-niv-1" class="max-w-4xl text-center my-20 opacity-0">
+      <h3 class="text-2xl font-semibold mb-4">❓ Question :</h3>
+      <p class="text-lg mb-6">Quel élément de cet email est le plus suspect ?</p>
+      <button id="quiz-answer-1" class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded m-2">
+        L'adresse email de l'expéditeur
+      </button>
+      <button id="quiz-answer-2" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded m-2">
+        Le lien de vérification
+      </button>
+      <button id="quiz-answer-3" class="bg-yellow-500 hover:bg-yellow-700 text-white py-2 px-4 rounded m-2">
+        L'urgence dans le message
+      </button>
   </div>
+
+  <!-- Feedback du Quiz -->
+  <div id="quiz-response" class="max-w-4xl text-center my-10 opacity-0">
+    <p id="quiz-feedback" class="text-lg font-semibold"></p>
+  </div>
+
 
   <!-- Bonnes Pratiques : Se protéger du Phishing -->
   <div id="phishing-tips" class="h-auto py-10 flex flex-col items-center justify-start mb-10">
@@ -142,15 +146,12 @@
 
 
    <!-- Transition au cas pratique -->
-   <div id="case-intro" class="max-w-4xl text-center mt-10 pointer-events-none">
-    <h3 class="text-2xl font-semibold mb-4">🎯 Félicitations !</h3>
-    <p class="text-lg">
-      Vous avez identifié les éléments suspects de cet email.<br>
-      Préparez-vous maintenant pour un cas pratique interactif où vous devrez analyser plusieurs emails.
-    </p>
-    <button id="start-case" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded mt-6">
-      Passer au cas pratique
-    </button>
+  <div id="case-intro" class="max-w-4xl text-center mt-10 pointer-events-none">
+      <h3 class="text-2xl font-semibold mb-4">🎯 Félicitations !</h3>
+      <p class="text-lg">
+        Vous avez identifié les éléments suspects de cet email.<br>
+        Préparez-vous maintenant pour un cas pratique interactif où vous devrez analyser plusieurs emails.
+      </p>
   </div>
 
   <!-- Cas Pratique : Analyse d'emails -->
@@ -159,131 +160,118 @@
     <h2 class="text-4xl font-bold text-center mb-10 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
       Cas Pratique : Analysez les Emails !
     </h2>
+  </div>
 
     <!-- Instructions -->
-    <div class="max-w-4xl text-left mb-10">
-      <h3 class="text-2xl font-semibold mb-4">🔍 Instructions :</h3>
-      <p class="text-lg">
-        Vous allez recevoir trois emails. Votre mission est de repérer lequel (ou lesquels) sont des tentatives de phishing. Analysez les détails comme :
-      </p>
-      <ul class="list-disc list-inside text-lg mb-6">
-        <li>L'adresse email de l'expéditeur</li>
-        <li>Les liens contenus dans l'email</li>
-        <li>Le ton du message (urgence, menaces, etc.)</li>
-      </ul>
-      <p class="text-lg">
-        Cliquez sur "Analyser" pour révéler chaque email, puis sélectionnez si l'email est légitime ou une tentative de phishing.
-      </p>
-    </div>
+  <div class="max-w-4xl text-left mb-10">
+    <h3 class="text-2xl font-semibold mb-4">🔍 Instructions :</h3>
+    <p class="text-lg">
+      Vous allez recevoir trois emails. Votre mission est de repérer lequel (ou lesquels) sont des tentatives de phishing. Analysez les détails comme :
+    </p>
+    <ul class="list-disc list-inside text-lg mb-6">
+      <li>L'adresse email de l'expéditeur</li>
+      <li>Les liens contenus dans l'email</li>
+      <li>Le ton du message (urgence, menaces, etc.)</li>
+    </ul>
+    <p class="text-lg">
+      Cliquez sur "Analyser" pour révéler chaque email, puis sélectionnez si l'email est légitime ou une tentative de phishing.
+    </p>
+  </div>
 
     <!-- Emails à analyser -->
-    <div id="emails" class="space-y-6 w-full">
-      <!-- Email 1 -->
-      <div class="relative w-full h-[50vh] mb-10">
-    <div id="level-1-info" class="w-[45vw] h-[50vh] text-left mb-10 absolute top-0 right-5 flex flex-col justify-center bg-gray-800 p-6 rounded-lg shadow-lg">
-        
-        <h3 class="text-xl font-semibold mb-4">Email 1 :</h3>
-        <p>
-          De : <span class="text-red-400">security@apple-account.com</span><br>
-          Objet : <span class="text-yellow-400">"Votre compte Apple a été verrouillé"</span>
-        </p>
-        <p class="mt-4">
-          Bonjour,<br>
-          Nous avons détecté une connexion suspecte sur votre compte Apple. Veuillez réinitialiser votre mot de passe immédiatement en cliquant sur ce lien :<br>
-          <a href="#" class="text-blue-400 underline">apple-account-security.com/reset</a><br>
-          Merci,<br>
-          L'équipe Apple
-        </p>
-        <div class="mt-4 flex space-x-4">
-          <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">
-            Phishing
-          </button>
-          <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">
-            Légitime
-          </button>
-        </div>
-      </div>
-      </div>
-
-      <!-- Email 2 -->
-      <div class="bg-gray-800 text-white p-6 rounded-lg shadow-lg">
-        <h3 class="text-xl font-semibold mb-4">Email 2 :</h3>
-        <p>
-          De : <span class="text-green-400">no-reply@amazon.com</span><br>
-          Objet : <span class="text-yellow-400">"Confirmation de votre commande #12345"</span>
-        </p>
-        <p class="mt-4">
-          Bonjour,<br>
-          Nous confirmons que votre commande récente a bien été expédiée. Vous pouvez suivre son statut en cliquant sur ce lien :<br>
-          <a href="https://www.amazon.com/order/12345" class="text-blue-400 underline">Suivre ma commande</a><br>
-          Merci,<br>
-          L'équipe Amazon
-        </p>
-        <div class="mt-4 flex space-x-4">
-          <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">
-            Phishing
-          </button>
-          <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">
-            Légitime
-          </button>
-        </div>
-      </div>
-
-      <!-- Email 3 -->
-      <div class="bg-gray-800 text-white p-6 rounded-lg shadow-lg">
-        <h3 class="text-xl font-semibold mb-4">Email 3 :</h3>
-        <p>
-          De : <span class="text-red-400">support@banking-secure.com</span><br>
-          Objet : <span class="text-yellow-400">"Urgent : Votre compte est compromis"</span>
-        </p>
-        <p class="mt-4">
-          Bonjour,<br>
-          Nous avons détecté une tentative de connexion inhabituelle à votre compte bancaire. Veuillez confirmer vos informations en cliquant sur ce lien :<br>
-          <a href="#" class="text-blue-400 underline">banking-secure.com/verify</a><br>
-          Merci,<br>
-          L'équipe de sécurité bancaire
-        </p>
-        <div class="mt-4 flex space-x-4">
-          <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">
-            Phishing
-          </button>
-          <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">
-            Légitime
-          </button>
-        </div>
+  <div id="emails" class="space-y-6 max-w-3xl">
+    <!-- Email 1 -->
+    <div class="bg-gray-800 text-white p-6 rounded-lg shadow-lg">
+      
+      <h3 class="text-xl font-semibold mb-4">Email 1 :</h3>
+      <p>
+        De : <span class="text-red-400">security@apple-account.com</span><br>
+        Objet : <span class="text-yellow-400">"Votre compte Apple a été verrouillé"</span>
+      </p>
+      <p class="mt-4">
+        Bonjour,<br>
+        Nous avons détecté une connexion suspecte sur votre compte Apple. Veuillez réinitialiser votre mot de passe immédiatement en cliquant sur ce lien :<br>
+        <a href="#" class="text-blue-400 underline">apple-account-security.com/reset</a><br>
+        Merci,<br>
+        L'équipe Apple
+      </p>
+      <div class="mt-4 flex space-x-4">
+        <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">
+          Phishing
+        </button>
+        <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">
+          Légitime
+        </button>
       </div>
     </div>
 
-    <!-- Validation -->
-    <div id="case-result" class="mt-10 pointer-events-none text-center">
-      <h3 class="text-2xl font-semibold mb-4">📊 Résultats :</h3>
-      <p class="text-lg">Vous avez correctement identifié <span id="correct-answers">0</span> tentatives de phishing sur 3.</p>
-      <button id="restart-case" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded mt-6">
-        Réessayer
-      </button>
+    <!-- Email 2 -->
+    <div class="bg-gray-800 text-white p-6 rounded-lg shadow-lg">
+      <h3 class="text-xl font-semibold mb-4">Email 2 :</h3>
+      <p>
+        De : <span class="text-green-400">no-reply@amazon.com</span><br>
+        Objet : <span class="text-yellow-400">"Confirmation de votre commande #12345"</span>
+      </p>
+      <p class="mt-4">
+        Bonjour,<br>
+        Nous confirmons que votre commande récente a bien été expédiée. Vous pouvez suivre son statut en cliquant sur ce lien :<br>
+        <a href="https://www.amazon.com/order/12345" class="text-blue-400 underline">Suivre ma commande</a><br>
+        Merci,<br>
+        L'équipe Amazon
+      </p>
+      <div class="mt-4 flex space-x-4">
+        <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">
+          Phishing
+        </button>
+        <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">
+          Légitime
+        </button>
+      </div>
+    </div>
+
+    <!-- Email 3 -->
+    <div class="bg-gray-800 text-white p-6 rounded-lg shadow-lg">
+      <h3 class="text-xl font-semibold mb-4">Email 3 :</h3>
+      <p>
+        De : <span class="text-red-400">support@banking-secure.com</span><br>
+        Objet : <span class="text-yellow-400">"Urgent : Votre compte est compromis"</span>
+      </p>
+      <p class="mt-4">
+        Bonjour,<br>
+        Nous avons détecté une tentative de connexion inhabituelle à votre compte bancaire. Veuillez confirmer vos informations en cliquant sur ce lien :<br>
+        <a href="#" class="text-blue-400 underline">banking-secure.com/verify</a><br>
+        Merci,<br>
+        L'équipe de sécurité bancaire
+      </p>
+      <div class="mt-4 flex space-x-4">
+        <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">
+          Phishing
+        </button>
+        <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">
+          Légitime
+        </button>
+      </div>
     </div>
   </div>
-  <!-- Transition au Niveau 2 -->
-  <div id="level-3-transition" class="max-w-4xl text-center mt-10 pointer-events-none">
-    <h3 class="text-2xl font-semibold mb-4">🎉 Félicitations !</h3>
-    <p class="text-lg">
-      Vous avez réussi à détecter les tentatives de phishing dans ces emails.<br>
-      Préparez-vous maintenant pour le Niveau 2 : Ransomware.
-    </p>
-    <button id="start-level-3" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded mt-6">
-      Passer au Niveau 2
+    
+
+  <!-- Validation -->
+  <div id="case-result" class="mt-10 text-center">
+    <h3 class="text-2xl font-semibold mb-4">📊 Résultats :</h3>
+    <p class="text-lg">Vous avez correctement identifié <span id="correct-answers">0</span> tentatives de phishing sur 3.</p>
+    <button id="restart-case" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded mt-6">
+      Réessayer
     </button>
   </div>
-
-  <!-- Niveau 2 : Ransomware -->
-<div id="level-2" class="h-auto py-10 flex flex-col items-center justify-start pointer-events-none">
-  <!-- Titre principal -->
-  <h2 class="text-4xl font-bold text-center mb-10 bg-gradient-to-r from-red-400 to-yellow-500 text-transparent bg-clip-text">
-    Niveau 2 : Ransomware - Protégez vos données !
-  </h2>
+  
+  <div id="level-2" class="h-[100vh] flex items-center justify-center opacity-0 pointer-events-none">
+    <h2 id="level-2-text" class="text-7xl font-bold text-center max-w-6xl bg-gradient-to-r from-yellow-400 to-red-500 text-transparent bg-clip-text">
+      Niveau 2 : Ransomware - Protégez vos données !
+    </h2>
+  </div>
 
   <!-- Sensibilisation -->
-  <div id="level-2-info" class="max-w-4xl text-left mb-10">
+  <div id="level-2-info" class="max-w-4xl text-left my-10">
     <h3 class="text-2xl font-semibold mb-4">🔐 Qu'est-ce qu'un ransomware ?</h3>
     <p class="text-lg mb-6">
       Un ransomware est un logiciel malveillant qui verrouille vos fichiers ou votre système et demande une rançon pour les débloquer. Les hackers utilisent souvent des méthodes comme :
@@ -332,25 +320,14 @@
     </div>
   </div>
 
-  <!-- Transition au Niveau 3 -->
-  <div id="level-3-transition" class="max-w-4xl text-center mt-10 pointer-events-none">
-    <h3 class="text-2xl font-semibold mb-4">🎉 Félicitations !</h3>
-    <p class="text-lg">
-      Vous avez réussi à comprendre les dangers des ransomwares et comment vous en protéger.<br>
-      Préparez-vous maintenant pour le Niveau 3 : Protection Réseau.
-    </p>
-    <button id="start-level-3" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded mt-6">
-      Passer au Niveau 3
-    </button>
-  </div>
-</div>
 
 <!-- Niveau 3 : Protection Réseau -->
-<div id="level-3" class="h-auto py-10 flex flex-col items-center justify-start pointer-events-none">
-  <!-- Titre principal -->
-  <h2 class="text-4xl font-bold text-center mb-10 bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text">
-    Niveau 3 : Protection Réseau - Sécurisez vos connexions !
-  </h2>
+
+  <div id="level-3" class="h-[100vh] flex items-center justify-center opacity-0 pointer-events-none">
+    <h2 id="level-3-text" class="text-7xl font-bold text-center max-w-6xl bg-gradient-to-r from-yellow-400 to-red-500 text-transparent bg-clip-text">
+      Niveau 3 : Protection Réseau - Sécurisez vos connexions !
+    </h2>
+  </div>
 
   <!-- Sensibilisation -->
   <div id="level-3-info" class="max-w-4xl text-left mb-10">
@@ -385,7 +362,7 @@
   </div>
 
   <!-- Cas pratique -->
-  <div id="case-practice-3" class="max-w-4xl bg-gray-800 text-white p-6 rounded-lg shadow-lg">
+  <div id="case-practice-3" class="max-w-3xl bg-gray-800 text-white p-6 rounded-lg shadow-lg">
     <h3 class="text-2xl font-semibold mb-4">🎯 Cas Pratique : Un réseau non sécurisé</h3>
     <p class="mb-4">
       Vous configurez un nouveau réseau Wi-Fi chez vous. Voici les paramètres actuels :
@@ -418,13 +395,8 @@
       Vous avez complété tous les niveaux et appris à vous protéger contre le phishing, les ransomwares, et à sécuriser votre réseau.<br>
       Continuez à appliquer ces bonnes pratiques pour rester en sécurité en ligne.
     </p>
-    <button id="restart-game" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded mt-6">
-      Recommencer le jeu
-    </button>
   </div>
 </div>
-
-
 
 </body>
 </html>

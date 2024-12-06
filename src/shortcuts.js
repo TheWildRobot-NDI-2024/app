@@ -26,7 +26,7 @@ const handleShortcut = (event) => {
                 window.location.href = '/jouer.html';
                 break;
             case 'cyber':
-                window.location.href = '/cyber.html';
+                window.location.href = '/cyber-cest-super.html';
                 break;
             case 'dashboard':
                 window.location.href = 'https://dash.jadoreleau.com';

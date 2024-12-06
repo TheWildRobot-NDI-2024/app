@@ -1,32 +1,22 @@
-version: "3.8"
-
 services:
   web:
     #image: ghcr.io/thewildrobot-ndi-2024/app:latest
-    image: app-local:latest
+    image: ndi:latest
     ports:
       - "8800:80"
     restart: unless-stopped
-    networks:
-      - ndi
-      - webapps
 
   nginx-exporter:
     image: nginx/nginx-prometheus-exporter:latest
     command:
       - -nginx.scrape-uri
       - http://web/stub_status
-    networks:
-      - ndi
-
 
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
-    networks:
-      - ndi
     ports:
-      - 9113:9113
+      - 9090:9090
     volumes:
       - prometheus-data:/prometheus
       - ./devops/prometheus.yml:/etc/prometheus/prometheus.yml
@@ -38,8 +28,6 @@ services:
       - 8801:3000
     volumes:
       - grafana-data:/var/lib/grafana
-    networks:
-      - ndi
 
   uptime-kuma:
     image: louislam/uptime-kuma:latest
@@ -48,11 +36,6 @@ services:
     ports:
       - 8802:3001
     restart: unless-stopped
-
-networks:
-  ndi:
-  webapps:
-    external: true
 
 volumes:
   grafana-data:

@@ -28,7 +28,7 @@ Le défi principal du projet se trouve dans la [page d'accueil](https://jadorele
 
 Google page speed insights
 
-[![Google Page Speed Insights](./google-insight.png)]
+![Google Page Speed Insights](./google-insight.png)
 
 #### Comment naviguer au clavier ?
 
@@ -56,8 +56,8 @@ On ajoute à cela Uptime Kuma, qui permet d'avoir un système d'alerte lors de p
 
 Pour les deux services :
 
--   **Utilisateur** : admin
--   **Mot de passe** : ZVWE?S#2'8Hy3x.
+-   **Utilisateur** : `admin`
+-   **Mot de passe** : `ZVWE?S#2'8Hy3x.`
 
 ### Illustration
 
@@ -79,9 +79,9 @@ Pour les deux services :
 
 Identifiants :
 
--   **Utilisateur** : admin@jadoreleau.com
--   **Mot de passe** : ZVWE?S#2'8Hy3x.
+-   **Utilisateur** : `admin@jadoreleau.com`
+-   **Mot de passe** : `ZVWE?S#2'8Hy3x.`
 
 ### Illustration
 
--   ![Plausible](./plausible.png)
+-   ![Plausible](./analytics.png)

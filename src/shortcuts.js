@@ -5,7 +5,7 @@
 // dashboard ctrl+alt+d
 
 const shortcuts = {
-    a: 'accueil',
+    h: 'accueil',
     j: 'jouer',
     c: 'cyber',
     d: 'dashboard',
@@ -16,6 +16,7 @@ const handleShortcut = (event) => {
     const key = event.key.toLowerCase();
     const ctrlKey = event.ctrlKey || event.metaKey;
     const altKey = event.altKey;
+    console.log(key, ctrlKey, altKey);
     if (ctrlKey && altKey && key in shortcuts) {
         switch (shortcuts[key]) {
             case 'accueil':

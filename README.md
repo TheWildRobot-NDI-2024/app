@@ -1,6 +1,13 @@
-# NDLI 2024 TheWildRobot
+<div align="center">
+  <img width=200 alt="NDLI 2024 TheWildRobot" src="/src/assets/logo.png">
 
-Le défi principal du projet se trouve dans la page d'accueil, /index.html et la page /jouer.html qui permettent d'apprendre les similitudes entre les humains et les océans puis de vérifier ses connaissances sur le quiz.
+  # NDLI 2024 TheWildRobot
+
+  Projet de  LE GALL Bastien, JARA Rémi, SALL Idrissa, MAEGHT Loan
+
+</div>
+[Le site](https://jadoreleau.com) est un site de sensibilisation à la pollution des océans.
+Le défi principal du projet se trouve dans la [page d'accueil](https://jadoreleau.com/index.html), et la [page jeu](https://jadoreleau.com/jouer.html) qui permettent d'apprendre les similitudes entre les humains et les océans puis de vérifier ses connaissances sur le quiz.
 
 ## Accessibilité (défi L’accessibilité au cœur du développement : relevez le défi !)
 

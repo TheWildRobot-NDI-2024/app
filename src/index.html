@@ -12,7 +12,7 @@
     <meta property="og:title" content="NDLI2024 - TheWildRobot" />
     <meta property="og:description" content="Notre site pour la nuit de l'info 2024, équipe TheWildRobot" />
     <meta property="og:image" content="/assets/logo.png" />
-    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta property="og:url" content="https://jadoreleau.com" />
     <meta property="og:type" content="website" />
 
     <!-- Twitter Card -->
@@ -34,8 +34,9 @@
     <script defer src="./assets/gsap.js"></script>
     <script defer src="script-index.js"></script>
     <script defer src="shortcuts.js"></script>
-    <script defer data-domain="jadoreleau.com" src="https://plausible.jadoreleau.com/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
-    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    <script defer data-domain="jadoreleau.com"
+        src="https://plausible.jadoreleau.com/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
+    <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 
 
 </head>
@@ -111,7 +112,7 @@
         <header
             class="flex flex-col sm:flex-row w-full items-center justify-between border-b-2 border-gray-200 bg-white">
             <div class="flex items-center space-x-2 p-1">
-                <img src="assets/logo.png" class="h-12 w-12" alt="Websit's logo" />
+                <img src="assets/logo.png" class="h-12 w-12" alt="Logo du site NDLI2024 TheWildRobot" />
             </div>
 
             <div class="flex items-center space-x-2 p-1">
@@ -119,15 +120,15 @@
             </div>
 
             <div class="flex flex-col sm:flex-row gap-2 items-center">
-                <p class="underline text-sm">CTRL + ALT + A = Accueil</p>
+                <p class="underline text-sm">CTRL + ALT + H = Accueil</p>
                 <p class="underline text-sm">CTRL + ALT + J = Jouer</p>
                 <p class="underline text-sm">CTRL + ALT + C = Cyber c'est super</p>
                 <p class="underline text-sm">CTRL + ALT + D = Dashboard</p>
-            </div>
+                <p class="underline text-sm">CTRL + ALT + S = Statistiques</p>
 
-            <div class="flex items-center space-x-2 p-1">
-                <h1 class="text-xl font-bold">The Wild Robot</h1>
-            </div>
+                <div class="flex items-center space-x-2 p-1 pr-4">
+                    <h1 class="text-xl font-bold">The Wild Robot</h1>
+                </div>
         </header>
 
         <div class="flex flex-col sm:flex-row">
@@ -151,16 +152,22 @@
                     <span>Jouer</span>
                 </a>
 
-                <a href="#" aria-label="Cyber c'est super"
+                <a href="cyber-cest-super.html" aria-label="Cyber c'est super"
                     class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
                     <i class="i-heroicons-key-20-solid h-7 w-7 mr-3" aria-label="Cyber c'est super"></i>
                     <span>Cyber c'est super</span>
                 </a>
 
-                <a href="#" aria-label="Dashboard"
+                <a href="https://dash.jadoreleau.com" aria-label="Dashboard"
                     class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
                     <i class="i-heroicons-adjustments-horizontal-solid h-7 w-7 mr-3" aria-label="Dashboard"></i>
                     <span>Dashboard</span>
+                </a>
+
+                <a href="https://plausible.jadoreleau.com" aria-label="Statistiques"
+                    class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
+                    <i class="i-heroicons-presentation-chart-bar-20-solid h-7 w-7 mr-3" aria-label="Statistiques"></i>
+                    <span>Statistiques</span>
                 </a>
             </aside>
 
@@ -168,37 +175,50 @@
             <div class="w-full h-full p-4 flex-col gap-2 items-start">
                 <div class="flex flex-col h-auto md:h-screen gap-2">
                     <h1 class="text-4xl font-bold mt-6">Immersion</h1>
-                    <p class="text-lg">Découvrez l'océan comme vous ne l'avez jamais vu et apprenez-en plus sur les
-                        conséquences du réchauffement climatique sur notre planète.</p>
+                    <p class="text-lg ">Explorez l’océan sous un nouvel angle et découvrez l’impact du réchauffement
+                        climatique sur notre planète.</p>
 
-                    <img src="assets/logo.png" alt="Website's logo" class="h-32 w-32" />
+                    <img src="assets/logo.png" alt="Logo du site NDLI2024 TheWildRobot" class="h-32 w-32" />
 
-                    <p class="text-2xl mt-16"><span
-                            class="font-bold underline decoration-blue-500/30 decoration-8">Survolez
-                            les images
-                            ci-dessous (ou cliquez sur téléphone)</span>
-                        pour en
-                        apprendre plus sur les conséquences du
-                        réchauffement
-                        climatique sur notre planète et faire le lien avec notre corps.</p>
 
-                    <p class="text-lg">Le but de cette page est de sensibiliser les gens sur les conséquences du
-                        réchauffement climatique sur notre planète en faisant le lien avec notre corps. En effet, notre
-                        corps est un écosystème très complexe et fragile, tout comme notre planète. Nous avons donc
-                        décidé de faire un parallèle entre les conséquences du réchauffement climatique sur notre
-                        planète
-                        et les conséquences sur notre corps.</p>
+
+                    <h1 class="text-3xl mt-10">Sensibilisation</h1>
+
+                    <p class="text-lg bg-white border border-black p-4 rounded-xl mb-5">Cette page a pour objectif de
+                        sensibiliser le
+                        public
+                        aux conséquences du
+                        réchauffement climatique en établissant un parallèle entre notre planète et notre corps. Comme
+                        la Terre, notre corps est un écosystème complexe et délicat qui dépend d’un équilibre fragile.
+                    </p>
 
                     <h1 class="text-3xl mt-10">Le jeu</h1>
-                    <p class="text-lg">Pour pouvoir réussir le jeu, vous devrez comprendre les conséquences du
-                        réchauffement climatique sur notre planète et faire le lien avec notre corps. Vous devrez
-                        également
-                        comprendre les conséquences du réchauffement climatique sur notre planète pour pouvoir réussir
-                        le
-                        jeu.</p>
+                    <p class="text-lg bg-white border border-black p-4 rounded-xl">Pour réussir le jeu , vous devrez
+                        comprendre les
+                        effets du
+                        réchauffement climatique sur
+                        les systèmes océaniques et établir des liens avec les mécanismes du corps humain. Découvrez
+                        comment chaque partie de notre corps reflète les processus des océans. Plongez dans cette
+                        exploration fascinante des interactions entre la nature et l’humanité et comprenez l’impact des
+                        déséquilibres sur l’harmonie globale.</p>
+                    <i class="i-heroicons-arrow-down-16-solid mt-5 text-6xl animate-bounce"></i>
 
-                    <i class="i-heroicons-arrow-down-16-solid text-6xl mt-40 animate-bounce"></i>
+                    <h1 class="text-3xl mt-10">Les conséquences</h1>
+                    <p class="text-lg bg-white border border-black p-4 rounded-xl">
+                        Cette page permet aux utilisateurs d’explorer comment chaque partie du corps humain reflète
+                        les mécanismes de l’océan. Elle illustrera à la fois les bienfaits d’un équilibre harmonieux et
+                        les conséquences des dysfonctionnements sur ces deux écosystèmes interdépendants.
+                    </p>
+
                 </div>
+                <h1 class="text-4xl font-bold mt-24">Les enjeux</h1>
+                <p class="text-2xl bg--100 p-4 rounded-xl"><span
+                        class="font-bold underline decoration-blue-500/30 decoration-8">Survolez
+                        les images
+                        ci-dessous (ou cliquez sur téléphone)</span>
+                    pour comprendre les effets du réchauffement climatique sur les océans et leurs liens avec le
+                    fonctionnement de notre corps.</p>
+                <i class="i-heroicons-arrow-down-16-solid text-6xl mt-10 animate-bounce"></i>
 
                 <div class="flex w-full h-full flex-col gap-32">
                     <div class="flex flex-col lg:flex-row h-screen items-center">
@@ -212,9 +232,9 @@
                         </p>
                         <div class="hover-zone relative w-full h-96 m-10 rounded-lg" aria-labelledby="textCerveau">
                             <!-- Image de base -->
-                            <img src="./assets/biodiversite.jpg" alt="Biodiversité" class="base-image" />
+                            <img src="./assets/biodiversite.webp" alt="Biodiversité" class="base-image" />
                             <!-- Image au survol -->
-                            <img src="./assets/cerveau.jpg" alt="Cerveau" class="hover-image" />
+                            <img src="./assets/cerveau.webp" alt="Cerveau" class="hover-image" />
                         </div>
                     </div>
                     <div class="flex flex-col lg:flex-row h-screen items-center">
@@ -229,9 +249,9 @@
                         </p>
                         <div class="hover-zone relative w-full h-96 m-10 rounded-lg" aria-labelledby="textCoeur">
                             <!-- Image de base -->
-                            <img src="./assets/courants.jpg" alt="Courants aquatiques" class="base-image" />
+                            <img src="./assets/courants.webp" alt="Courants aquatiques" class="base-image" />
                             <!-- Image au survol -->
-                            <img src="./assets/coeur.jpg" alt="Coeur" class="hover-image" />
+                            <img src="./assets/coeur.webp" alt="Coeur" class="hover-image" />
                         </div>
                     </div>
 
@@ -246,10 +266,10 @@
                         </p>
                         <div class="hover-zone relative w-full h-96 m-10 rounded-lg" aria-labelledby="textPoumons">
                             <!-- Image de base -->
-                            <img src="./assets/plancton.jpg" alt="Petit poisson représentant un plancton"
+                            <img src="./assets/plancton.webp" alt="Petit poisson représentant un plancton"
                                 class="base-image" />
                             <!-- Image au survol -->
-                            <img src="./assets/poumons.jpg" alt="Poumons" class="hover-image" />
+                            <img src="./assets/poumons.webp" alt="Poumons" class="hover-image" />
                         </div>
                     </div>
 
@@ -264,9 +284,9 @@
                         </p>
                         <div class="hover-zone relative w-full h-96 m-10 rounded-lg" aria-labelledby="textMains">
                             <!-- Image de base -->
-                            <img src="./assets/coraux.jpg" alt="Coraux" class="base-image" />
+                            <img src="./assets/coraux.webp" alt="Coraux" class="base-image" />
                             <!-- Image au survol -->
-                            <img src="./assets/mains.jpg" alt="Mains" class="hover-image" />
+                            <img src="./assets/mains.webp" alt="Mains" class="hover-image" />
                         </div>
                     </div>
 
@@ -281,18 +301,137 @@
                         </p>
                         <div class="hover-zone relative w-full h-96 m-10 rounded-lg" aria-labelledby="textPieds">
                             <!-- Image de base -->
-                            <img src="./assets/ecosysteme.jpg" alt="Ecosystème marin" class="base-image" />
+                            <img src="./assets/ecosysteme.webp" alt="Ecosystème marin" class="base-image" />
                             <!-- Image au survol -->
-                            <img src="./assets/pieds.jpg" alt="Pieds" class="hover-image" />
+                            <img src="./assets/pieds.webp" alt="Pieds" class="hover-image" />
                         </div>
                     </div>
 
 
-                    <a href="jouer.html"
-                        class="flex items-center justify-center bg-blue-200 text-white font-bold rounded-md p-4 hover:bg-blue-600">Jouer
-                        au jeu</a>
+
 
                 </div>
+
+                <h2 class="text-3xl font-bold text-center mb-10 text-red-600">
+                    Les conséquences des dysfonctionnements
+                </h2>
+
+                <!-- Grille des conséquences -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 lg:px-16">
+                    <!-- Conséquence 1 -->
+                    <div class="bg-red-200 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                        <h3 class="text-xl font-bold mb-3">Poumons et Océans</h3>
+                        <p class="text-sm">
+                            Lorsque les poumons sont endommagés, notre capacité à respirer diminue,
+                            entraînant des problèmes respiratoires graves. Dans les océans, l’acidification
+                            détruit les planctons, réduisant l'oxygène produit sur Terre et perturbant toute la chaîne
+                            alimentaire.
+                        </p>
+                        <div class="hover-zone relative w-full h-64 mt-4">
+                            <img src="./assets/acidification.webp" alt="Acidification des océans" class="base-image" />
+                            <img src="./assets/lungs-smoker.webp" alt="Poumons endommagés" class="hover-image" />
+                        </div>
+                        <p>Survoler les images pour en apprendre plus (ou cliquez sur téléphone)</p>
+
+                    </div>
+
+                    <!-- Conséquence 2 -->
+                    <div class="bg-red-200 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                        <h3 class="text-xl font-bold mb-3">Mains et Coraux</h3>
+                        <p class="text-sm">
+                            Le froid extrême peut geler les extrémités, causant des engelures ou même
+                            une perte d'usage. Dans l'océan, le blanchiment des coraux, causé par les changements de
+                            température,
+                            mène à la destruction des habitats pour des millions d'espèces marines.
+                        </p>
+                        <div class="hover-zone relative w-full h-64 mt-4">
+                            <img src="./assets/blanchiment.webp" alt="Blanchiment des coraux" class="base-image" />
+                            <img src="./assets/mains-froides.webp" alt="Mains affectées par le froid"
+                                class="hover-image" />
+                        </div>
+                        <p>Survoler les images pour en apprendre plus (ou cliquez sur téléphone)</p>
+
+                    </div>
+
+                    <!-- Conséquence 3 -->
+                    <div class="bg-red-200 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                        <h3 class="text-xl font-bold mb-3">Pieds et Biodiversité</h3>
+                        <p class="text-sm">
+                            Une blessure ou un dysfonctionnement des pieds limite la mobilité et
+                            l'équilibre. Dans les océans, la perte d’une espèce clé dans un écosystème
+                            peut entraîner un effondrement complet de la biodiversité.
+                        </p>
+                        <div class="hover-zone relative w-full h-64 mt-4">
+                            <img src="./assets/biodiversity-collapse.webp" alt="Effondrement de la biodiversité"
+                                class="base-image" />
+                            <img src="./assets/pied-blesses.webp" alt="Pieds blessés" class="hover-image" />
+                        </div>
+                        <p>Survoler les images pour en apprendre plus (ou cliquez sur téléphone)</p>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold text-center mb-6 mt-20 text-blue-600">
+                    Les bénéfices d’un bon fonctionnement
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 lg:px-16">
+                    <!-- Bénéfice 1 -->
+                    <div class="bg-blue-200 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-4 text-center">Écosystèmes sains</h3>
+                        <p>Survoler les images pour en apprendre plus (ou cliquez sur téléphone)</p>
+
+                        <div class="hover-zone relative w-full h-64">
+                            <!-- Image de base -->
+                            <img src="./assets/biodiversite.webp" alt="Océan en bonne santé" class="base-image" />
+                            <!-- Image au survol -->
+                            <img src="./assets/body.webp" alt="Corps humain sain" class="hover-image" />
+                        </div>
+                        <p class="text-sm mt-4 text-center">
+                            Un écosystème marin en bon état soutient la biodiversité, tout comme un corps sain favorise
+                            un équilibre global et durable.
+                        </p>
+                    </div>
+
+                    <!-- Bénéfice 2 -->
+                    <div class="bg-blue-200 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-4 text-center">Amélioration de la santé</h3>
+                        <p>Survoler les images pour en apprendre plus (ou cliquez sur téléphone)</p>
+
+                        <div class="hover-zone relative w-full h-64">
+                            <!-- Image de base -->
+                            <img src="./assets/courants.webp" alt="Courants marins" class="base-image" />
+                            <!-- Image au survol -->
+                            <img src="./assets/coeur.webp" alt="Cœur humain en bonne santé" class="hover-image" />
+                        </div>
+                        <p class="text-sm mt-4 text-center">
+                            Des océans sains soutiennent la vie marine, tout comme un corps humain fonctionnant bien
+                            améliore notre bien-être et notre santé.
+                        </p>
+                    </div>
+
+                    <!-- Bénéfice 3 -->
+                    <div class="bg-blue-200 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-4 text-center">Préservation du climat</h3>
+                        <p>Survoler les images pour en apprendre plus (ou cliquez sur téléphone)</p>
+
+                        <div class="hover-zone relative w-full h-64">
+                            <!-- Image de base -->
+                            <img src="./assets/coraux.webp" alt="Coraux en bonne santé" class="base-image" />
+                            <!-- Image au survol -->
+                            <img src="./assets/strong-human.webp" alt="Corps humain fort" class="hover-image" />
+                        </div>
+                        <p class="text-sm mt-4 text-center">
+                            Protéger les océans stabilise le climat terrestre, tout comme une vie équilibrée
+                            soutient la durabilité humaine.
+                        </p>
+                    </div>
+                </div>
+
+
+                <a href="jouer.html"
+                    class="flex items-center mt-20 justify-center bg-blue-200 text-black font-bold rounded-md p-4 hover:bg-blue-600">Jouer
+                    au jeu</a>
+
+
 
             </div>
         </div>

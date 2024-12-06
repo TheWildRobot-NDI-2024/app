@@ -5,20 +5,19 @@
 // dashboard ctrl+alt+d
 
 const shortcuts = {
-    a: 'accueil',
+    h: 'accueil',
     j: 'jouer',
     c: 'cyber',
-    d: 'dashboard'
+    d: 'dashboard',
+    s: 'statistiques'
 };
 
 const handleShortcut = (event) => {
     const key = event.key.toLowerCase();
     const ctrlKey = event.ctrlKey || event.metaKey;
     const altKey = event.altKey;
-    console.log('ctrlk', ctrlKey);
-    console.log('alt', altKey);
+    console.log(key, ctrlKey, altKey);
     if (ctrlKey && altKey && key in shortcuts) {
-        console.log('key', key);
         switch (shortcuts[key]) {
             case 'accueil':
                 window.location.href = '/index.html';
@@ -31,6 +30,9 @@ const handleShortcut = (event) => {
                 break;
             case 'dashboard':
                 window.location.href = 'https://dash.jadoreleau.com';
+                break;
+            case 'statistiques':
+                window.location.href = 'https://plausible.jadoreleau.com';
                 break;
         }
     }

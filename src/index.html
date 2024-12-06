@@ -106,7 +106,7 @@
     <main class="min-h-screen w-full bg-gray-100 text-gray-700" x-data="layout">
         <header class="flex w-full items-center justify-between border-b-2 border-gray-200 bg-white">
             <div class="flex items-center space-x-2 p-1">
-                <img src="assets/logo.png" class="h-12 w-12" alt="logo" />
+                <img src="assets/logo.png" class="h-12 w-12" alt="Websit's logo" />
             </div>
 
             <div class="flex items-center space-x-2 p-1">
@@ -120,38 +120,40 @@
 
         <div class="flex flex-col sm:flex-row">
             <i class="i-heroicons-bars-3-16-solid text-3xl cursor-pointer m-2" @click="asideOpen = !asideOpen"
-                x-show="!asideOpen"></i>
+                aria-label="Menu" x-show="!asideOpen"></i>
 
-            <aside class="w-full sm:flex sm:w-72 flex-col space-y-2 p-2 h-auto sm:h-[90vh]" x-show="asideOpen">
-                <i class="i-heroicons-bars-3-16-solid text-2xl cursor-pointer" @click="asideOpen = !asideOpen"></i>
+            <aside class="w-full sm:flex sm:w-72 flex-col space-y-2 p-2 h-auto sm:h-[90vh]" role="navigation"
+                x-show="asideOpen">
+                <i class="i-heroicons-bars-3-16-solid text-2xl cursor-pointer" @click="asideOpen = !asideOpen"
+                    aria-label="Fermer le menu" x-show="asideOpen"></i>
 
-                <a href="index.html"
+                <a href="index.html" aria-label="Accueil"
                     class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
-                    <i class="i-heroicons-home-16-solid h-7 w-7 mr-3"></i>
+                    <i class="i-heroicons-home-16-solid h-7 w-7 mr-3" aria-label="Accueil"></i>
                     <span>Immersion</span>
                 </a>
 
-                <a href="jouer.html"
+                <a href="jouer.html" aria-label="Jouer"
                     class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
-                    <i class="i-heroicons-rocket-launch-16-solid h-7 w-7 mr-3"></i>
+                    <i class="i-heroicons-rocket-launch-16-solid h-7 w-7 mr-3" aria-label="Jouer"></i>
                     <span>Jouer</span>
                 </a>
 
-                <a href="#"
+                <a href="#" aria-label="Cyber c'est super"
                     class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
-                    <i class="i-heroicons-key-20-solid h-7 w-7 mr-3"></i>
+                    <i class="i-heroicons-key-20-solid h-7 w-7 mr-3" aria-label="Cyber c'est super"></i>
                     <span>Cyber c'est super</span>
                 </a>
 
-                <a href="#"
+                <a href="#" aria-label="Dashboard"
                     class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
-                    <i class="i-heroicons-adjustments-horizontal-solid h-7 w-7 mr-3"></i>
+                    <i class="i-heroicons-adjustments-horizontal-solid h-7 w-7 mr-3" aria-label="Dashboard"></i>
                     <span>Dashboard</span>
                 </a>
 
-                <a href="#"
+                <a href="#" aria-label="Exploration"
                     class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
-                    <i class="i-heroicons-globe-americas h-7 w-7 mr-3"></i>
+                    <i class="i-heroicons-globe-americas h-7 w-7 mr-3" aria-label="Exploration"></i>
                     <span>Exploration</span>
                 </a>
             </aside>
@@ -163,7 +165,7 @@
                     <p class="text-lg">Découvrez l'océan comme vous ne l'avez jamais vu et apprenez-en plus sur les
                         conséquences du réchauffement climatique sur notre planète.</p>
 
-                    <img src="assets/logo.png" alt="logo" class="h-32 w-32" />
+                    <img src="assets/logo.png" alt="Website's logo" class="h-32 w-32" />
 
                     <p class="text-2xl mt-16"><span
                             class="font-bold underline decoration-blue-500/30 decoration-8">Survolez
@@ -202,11 +204,11 @@
                             Mais de nombreuses espèces subissent les conséquences du trafic maritime et des
                             déversements de produits toxiques dans les océans.
                         </p>
-                        <div class="hover-zone relative w-full h-96 m-10 rounded-lg">
+                        <div class="hover-zone relative w-full h-96 m-10 rounded-lg" aria-labelledby="textCerveau">
                             <!-- Image de base -->
-                            <img src="./assets/biodiversite.jpg" alt="Base" class="base-image" />
+                            <img src="./assets/biodiversite.jpg" alt="Biodiversité" class="base-image" />
                             <!-- Image au survol -->
-                            <img src="./assets/cerveau.jpg" alt="Hover" class="hover-image" />
+                            <img src="./assets/cerveau.jpg" alt="Cerveau" class="hover-image" />
                         </div>
                     </div>
                     <div class="flex flex-col lg:flex-row h-screen items-center">
@@ -219,11 +221,11 @@
                             augmente le delta de température, perturbe les phénomènes météorologiques et les rend
                             plus fréquents.
                         </p>
-                        <div class="hover-zone relative w-full h-96 m-10 rounded-lg">
+                        <div class="hover-zone relative w-full h-96 m-10 rounded-lg" aria-labelledby="textCoeur">
                             <!-- Image de base -->
-                            <img src="./assets/courants.jpg" alt="Base" class="base-image" />
+                            <img src="./assets/courants.jpg" alt="Courants aquatiques" class="base-image" />
                             <!-- Image au survol -->
-                            <img src="./assets/coeur.jpg" alt="Hover" class="hover-image" />
+                            <img src="./assets/coeur.jpg" alt="Coeur" class="hover-image" />
                         </div>
                     </div>
 
@@ -236,11 +238,12 @@
                             50% de l'oxygène produit sur Terre, sont grandement affaiblis par l'acidification des
                             océans.
                         </p>
-                        <div class="hover-zone relative w-full h-96 m-10 rounded-lg">
+                        <div class="hover-zone relative w-full h-96 m-10 rounded-lg" aria-labelledby="textPoumons">
                             <!-- Image de base -->
-                            <img src="./assets/plancton.jpg" alt="Base" class="base-image" />
+                            <img src="./assets/plancton.jpg" alt="Petit poisson représentant un plancton"
+                                class="base-image" />
                             <!-- Image au survol -->
-                            <img src="./assets/poumons.jpg" alt="Hover" class="hover-image" />
+                            <img src="./assets/poumons.jpg" alt="Poumons" class="hover-image" />
                         </div>
                     </div>
 
@@ -253,11 +256,11 @@
                             sont immédiates : blanchiment des coraux, ce qui engendre la disparition de tout un
                             écosystème marin.
                         </p>
-                        <div class="hover-zone relative w-full h-96 m-10 rounded-lg">
+                        <div class="hover-zone relative w-full h-96 m-10 rounded-lg" aria-labelledby="textMains">
                             <!-- Image de base -->
-                            <img src="./assets/coraux.jpg" alt="Base" class="base-image" />
+                            <img src="./assets/coraux.jpg" alt="Coraux" class="base-image" />
                             <!-- Image au survol -->
-                            <img src="./assets/mains.jpg" alt="Hover" class="hover-image" />
+                            <img src="./assets/mains.jpg" alt="Mains" class="hover-image" />
                         </div>
                     </div>
 
@@ -270,11 +273,11 @@
                             biodiversité dans son ensemble très compliquée, voire impossible. C'est un écosystème
                             très minutieux.
                         </p>
-                        <div class="hover-zone relative w-full h-96 m-10 rounded-lg">
+                        <div class="hover-zone relative w-full h-96 m-10 rounded-lg" aria-labelledby="textPieds">
                             <!-- Image de base -->
-                            <img src="./assets/ecosysteme.jpg" alt="Base" class="base-image" />
+                            <img src="./assets/ecosysteme.jpg" alt="Ecosystème marin" class="base-image" />
                             <!-- Image au survol -->
-                            <img src="./assets/pieds.jpg" alt="Hover" class="hover-image" />
+                            <img src="./assets/pieds.jpg" alt="Pieds" class="hover-image" />
                         </div>
                     </div>
 

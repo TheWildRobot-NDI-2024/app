@@ -28,7 +28,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
     <link rel="manifest" href="./assets/site.webmanifest">
 
-    <!-- Styles -->
     <link rel="stylesheet" href="./output.css" />
     <script defer src="./assets/alpinejs.js"></script>
     <script defer src="./assets/gsap.js"></script>
@@ -64,34 +63,6 @@
         clip-path: circle(50% at 50% 50%);
     }
 
-    .sticky-container {
-        position: relative;
-        height: 200vh;
-    }
-
-    .scroll-image {
-        position: sticky;
-        top: 10%;
-        right: 10%;
-        width: 200px;
-        height: auto;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .scroll-image.maximized {
-        width: 400px;
-    }
-
-    .hidden-text {
-        opacity: 0;
-        /* Texte invisible au départ */
-        transform: translateY(30px);
-        /* Commence en bas */
-        font-size: 30px;
-        color: #333;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
     main {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1028%26quot%3b)' fill='none'%3e%3cpath d='M 0%2c277 C 96%2c304.8 288%2c422 480%2c416 C 672%2c410 768%2c264.4 960%2c247 C 1152%2c229.6 1344%2c312.6 1440%2c329L1440 560L0 560z' fill='rgba(147%2c 199%2c 255%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1028'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
         background-size: cover;
@@ -104,7 +75,7 @@
     <main class="min-h-screen w-full bg-gray-100 text-gray-700" x-data="layout">
         <header class="flex w-full items-center justify-between border-b-2 border-gray-200 bg-white">
             <div class="flex items-center space-x-2 p-1">
-                <img src="assets/logo.png" class="h-12 w-12" alt="logo" />
+                <img src="assets/logo.png" class="h-12 w-12" alt="Website's logo" />
             </div>
 
             <div class="flex items-center space-x-2 p-1">
@@ -129,10 +100,10 @@
                     <span>Immersion</span>
                 </a>
 
-                <a href="#"
+                <a href="jouer.html"
                     class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
                     <i class="i-heroicons-rocket-launch-16-solid h-7 w-7 mr-3"></i>
-                    <span>Quiz</span>
+                    <span>Jouer</span>
                 </a>
 
                 <a href="#"
@@ -154,9 +125,7 @@
                 </a>
             </aside>
 
-            <!-- main content page -->
             <div class="w-full h-full flex flex-col justify-center items-center p-4 gap-4">
-                <!-- Section principale -->
                 <div class="flex flex-col items-start justify-start w-full gap-4">
 
                     <h1 class="text-3xl font-bold text-gray-800">Jouer</h1>

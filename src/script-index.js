@@ -1,18 +1,33 @@
 // ANIMATION IMAGE AVEC MASQUE
-const hoverZone = document.getElementById('hover-zone');
-const hoverImage = hoverZone.querySelector('.hover-image');
+const hoverZones = document.querySelectorAll('.hover-zone');
 
-hoverZone.addEventListener('mousemove', (e) => {
-    const rect = hoverZone.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+hoverZones.forEach((hoverZone, index) => {
+    const hoverImage = hoverZone.querySelector('.hover-image');
+    console.log(hoverImage);
+    hoverZone.addEventListener('mousemove', (e) => {
+        const rect = hoverZone.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-    hoverImage.style.clipPath = `circle(80px at ${x}px ${y}px)`;
+        hoverImage.style.clipPath = `circle(150px at ${x}px ${y}px)`;
+    });
+
+    hoverZone.addEventListener('mouseleave', () => {
+        hoverImage.style.clipPath = 'circle(0% at 50% 50%)';
+    });
 });
 
-hoverZone.addEventListener('mouseleave', () => {
-    hoverImage.style.clipPath = 'circle(0% at 50% 50%)';
-});
+// hoverZone.addEventListener('mousemove', (e) => {
+//     const rect = hoverZone.getBoundingClientRect();
+//     const x = e.clientX - rect.left;
+//     const y = e.clientY - rect.top;
+
+//     hoverImage.style.clipPath = `circle(80px at ${x}px ${y}px)`;
+// });
+
+// hoverZone.addEventListener('mouseleave', () => {
+//     hoverImage.style.clipPath = 'circle(0% at 50% 50%)';
+// });
 
 // ANIMATION AGRANDISSEMENT IMAGE
 const image = document.getElementById('scrollImage');
@@ -26,27 +41,6 @@ const textPieds = document.getElementById('textPieds');
 
 window.addEventListener('scroll', function () {
     const scrollPosition = window.scrollY; // position de défilement verticale
-
-    const newSize = 200 + scrollPosition * 8; // plus on descend, plus l'image grandit
-
-    const newTopPosition = 20 + scrollPosition * 0.01; // plus on descend, plus l'image descend
-
-    const maxSize = 5000;
-    const maxPosition = 120;
-    console.log(newSize);
-    if (newSize > maxSize) {
-        image.style.width = `${maxSize}px`;
-    } else {
-        image.style.width = `${newSize}px`;
-    }
-
-    if (scrollPosition > 500) {
-        if (newTopPosition > maxPosition) {
-            image.style.top = `${maxPosition}%`;
-        } else {
-            image.style.top = `${newTopPosition}%`;
-        }
-    }
 
     // ANIMATION TEXTE APPARITION SCROLL
 

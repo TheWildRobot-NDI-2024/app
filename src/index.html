@@ -53,6 +53,7 @@
         height: 100%;
         object-fit: cover;
         transition: clip-path 0.2s ease-out;
+        border-radius: 25px;
     }
 
     .hover-image {
@@ -150,68 +151,128 @@
             </aside>
 
             <!-- main content page -->
-            <div class="w-full h-full p-4 flex gap-2 items-start">
-                <div class="flex w-1/2 flex-grow h-full flex-col gap-32">
-                    <p class="mt-96 text-lg" id="textCerveau"> <span class="underline font-bold">Cerveau:</span> Le
-                        cerveau
-                        humain est encore
-                        très incompris. À
-                        l'heure
-                        actuelle, le fond marin est une zone moins explorée que la Lune. Un à deux tiers des espaces
-                        marins
-                        restent inconnus. Mais de nombreuses espèces subissent les conséquences du trafic maritime et
-                        des
-                        déversements de produits toxiques dans les océans.
-                    </p>
-                    <p id="textCoeur" class="text-lg"> <span class="underline font-bold">Coeur:</span> Un cœur stable
-                        qui bat à un
-                        rythme régulier est
-                        un signe de
-                        bonne santé. Les courants marins sont l'analogie parfaite : les cyclones et anticyclones sont
-                        essentiels pour maintenir les saisons telles que nous les connaissons. Le réchauffement des eaux
-                        augmente le delta de température, perturbe les phénomènes météorologiques et les rend plus
-                        fréquents.
-                    </p>
-                    <p id="textPoumons" class="text-lg"> <span class="underline font-bold">Poumons:</span> Les poumons
-                        des humains sont
-                        des éponges très
-                        fragiles,
-                        et des dépôts dégradent rapidement leur efficacité. Au mieux, dans les océans, les planctons,
-                        qui
-                        représentent 50% de l'oxygène produit sur Terre, sont grandement affaiblis par l'acidification
-                        des
-                        océans.
-                    </p>
-                    <p id="textMains" class="text-lg"> <span class="underline font-bold">Mains:</span> La partie la plus
-                        sensible au
-                        froid du corps est
-                        les mains.
-                        Tout comme les coraux, qui sont les premiers à réagir aux changements de température de l'océan.
-                        Les
-                        conséquences sont immédiates : blanchiment des coraux, ce qui engendre la disparition de tout un
-                        écosystème marin.
-                    </p>
-                    <p id="textPieds" class="text-lg"> <span class="underline font-bold">Pieds:</span> Nos membres nous
-                        sont chers, pour
-                        nous nourrir
-                        ou encore
-                        marcher. De la même manière, dans l'océan, retirer ou réduire une population d'individus rend la
-                        survie de la biodiversité dans son ensemble très compliquée, voire impossible. C'est un
-                        écosystème
-                        très minutieux.</p>
+            <div class="w-full h-full p-4 flex-col gap-2 items-start">
+                <div class="flex flex-col gap-2">
+                    <h1 class="text-4xl font-bold">Immersion</h1>
+                    <p class="text-lg">Découvrez l'océan comme vous ne l'avez jamais vu.</p>
+                </div>
+                <div class="flex flex-row gap-2 items-start">
+
+                    <div class="flex w-full h-full flex-col gap-32">
+                        <div class="flex flex-row justify-between items-center">
+                            <p class="mt-96 text-lg" id="textCerveau"> <span class="underline font-bold">Cerveau:</span>
+                                Le
+                                cerveau
+                                humain est encore
+                                très incompris. À
+                                l'heure
+                                actuelle, le fond marin est une zone moins explorée que la Lune. Un à deux tiers des
+                                espaces
+                                marins
+                                restent inconnus. Mais de nombreuses espèces subissent les conséquences du trafic
+                                maritime
+                                et
+                                des
+                                déversements de produits toxiques dans les océans.
+                            </p>
+                            <div class=" hover-zone relative w-full h-96 rounded-lg">
+                                <!-- Image de base -->
+                                <img src="./assets/biodiversite.jpg" alt="Base" class="base-image" />
+                                <!-- Image au survol -->
+                                <img src="./assets/cerveau.jpg" alt="Hover" class="hover-image" />
+                            </div>
+                        </div>
+                        <div class="flex flex-row justify-between items-center">
+
+                            <p id="textCoeur" class="text-lg"> <span class="underline font-bold">Coeur:</span> Un cœur
+                                stable
+                                qui bat à un
+                                rythme régulier est
+                                un signe de
+                                bonne santé. Les courants marins sont l'analogie parfaite : les cyclones et anticyclones
+                                sont
+                                essentiels pour maintenir les saisons telles que nous les connaissons. Le réchauffement
+                                des
+                                eaux
+                                augmente le delta de température, perturbe les phénomènes météorologiques et les rend
+                                plus
+                                fréquents.
+                            </p>
+                            <div class=" hover-zone relative w-full h-96 rounded-lg">
+                                <!-- Image de base -->
+                                <img src="./assets/courants.jpg" alt="Base" class="base-image" />
+                                <!-- Image au survol -->
+                                <img src="./assets/coeur.jpg" alt="Hover" class="hover-image" />
+                            </div>
+                        </div>
+                        <div class="flex flex-row justify-between items-center">
+
+                            <p id="textPoumons" class="text-lg"> <span class="underline font-bold ">Poumons:</span> Les
+                                poumons
+                                des humains sont
+                                des éponges très
+                                fragiles,
+                                et des dépôts dégradent rapidement leur efficacité. Au mieux, dans les océans, les
+                                planctons,
+                                qui
+                                représentent 50% de l'oxygène produit sur Terre, sont grandement affaiblis par
+                                l'acidification
+                                des
+                                océans.
+                            </p>
+                            <div class=" hover-zone relative w-full h-96 rounded-lg">
+                                <!-- Image de base -->
+                                <img src="./assets/plancton.jpg" alt="Base" class="base-image" />
+                                <!-- Image au survol -->
+                                <img src="./assets/poumons.jpg" alt="Hover" class="hover-image" />
+                            </div>
+                        </div>
+                        <div class="flex flex-row justify-between items-center">
+
+                            <p id="textMains" class="text-lg"> <span class="underline font-bold">Mains:</span> La partie
+                                la
+                                plus
+                                sensible au
+                                froid du corps est
+                                les mains.
+                                Tout comme les coraux, qui sont les premiers à réagir aux changements de température de
+                                l'océan.
+                                Les
+                                conséquences sont immédiates : blanchiment des coraux, ce qui engendre la disparition de
+                                tout un
+                                écosystème marin.
+                            </p>
+                            <div class=" hover-zone relative w-full h-96 rounded-lg">
+                                <!-- Image de base -->
+                                <img src="./assets/coraux.jpg" alt="Base" class="base-image" />
+                                <!-- Image au survol -->
+                                <img src="./assets/mains.jpg" alt="Hover" class="hover-image" />
+                            </div>
+                        </div>
+                        <div class="flex flex-row justify-between items-center">
+
+                            <p id="textPieds" class="text-lg"> <span class="underline font-bold">Pieds:</span> Nos
+                                membres
+                                nous
+                                sont chers, pour
+                                nous nourrir
+                                ou encore
+                                marcher. De la même manière, dans l'océan, retirer ou réduire une population d'individus
+                                rend la
+                                survie de la biodiversité dans son ensemble très compliquée, voire impossible. C'est un
+                                écosystème
+                                très minutieux.</p>
+                            <div class=" hover-zone relative w-full h-96 rounded-lg">
+                                <!-- Image de base -->
+                                <img src="./assets/ecosysteme.jpg" alt="Base" class="base-image" />
+                                <!-- Image au survol -->
+                                <img src="./assets/pieds.jpg" alt="Hover" class="hover-image" />
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="sticky-container flex justify-start items-start max-w-6xl overflow-visible">
-                    <img src="assets/body.svg" alt="Right Image" class="scroll-image h-fit" id="scrollImage" />
-                </div>
-
-                <div id="hover-zone" class="relative w-96 h-96 rounded-lg hidden">
-                    <!-- Image de base -->
-                    <img src="https://via.placeholder.com/800x800?text=Image+de+Base" alt="Base" class="base-image" />
-                    <!-- Image au survol -->
-                    <img src="https://cdn.futura-sciences.com/sources/images/AI-creation.jpg" alt="Hover"
-                        class="hover-image" />
-                </div>
             </div>
         </div>
         <footer class="flex items-center justify-between border-t-2 border-gray-200 bg-white p-2">

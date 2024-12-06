@@ -18,7 +18,7 @@ services:
       - 9090:9090
     volumes:
       - prometheus-data:/prometheus
-      - ./devops/prometheus.yml:/etc/prometheus/prometheus.yml
+      - /home/ubuntu/ndi-devops/prometheus.yml:/etc/prometheus/prometheus.yml
 
   grafana:
     image: grafana/grafana:latest
@@ -128,7 +128,7 @@ services:
       - MANDRILL_API_KEY
       - SENDGRID_API_KEY
     ports:
-      - 127.0.0.1:8000:${HTTP_PORT}
+      - 8803:${HTTP_PORT}
 
 volumes:
   grafana-data:

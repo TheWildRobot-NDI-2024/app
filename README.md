@@ -59,6 +59,11 @@ Pour les deux services :
 -   **Utilisateur** : admin
 -   **Mot de passe** : ZVWE?S#2'8Hy3x.
 
+### Illustration
+
+-   [![Dashboard](./dashboard.png)]
+-   [![Uptime](./uptime.png)]
+
 ## Enquête sur les Données : Devenez un Sherlock des Statistiques ! (défi Enquête sur les données)
 
 1. **Documentation** : La documentation claire facilite la prise en main et l'utilisation sans confusion.
@@ -76,3 +81,7 @@ Identifiants :
 
 -   **Utilisateur** : admin@jadoreleau.com
 -   **Mot de passe** : ZVWE?S#2'8Hy3x.
+
+### Illustration
+
+-   [![Plausible](./plausible.png)]

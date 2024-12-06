@@ -9,9 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     { opacity: 1, y: 0, duration: 1.5, ease: "power2.in" }
   );
   
-  // window.scrollTo(0, 0);
-  console.log("DOM fully loaded and parsed");
-
   const chatbot = document.getElementById("chatbot");
   const gameIntro = document.getElementById("game-intro");
   const bouton = document.getElementById("start-buttons");
@@ -184,7 +181,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Attach the scroll event listener
   window.addEventListener("scroll", function () {
     const scrollPosition = window.scrollY
-    console.log(scrollPosition);
 
     const animateObjectY = (element, start, end, time) => {
       if (scrollPosition > start) {
@@ -196,7 +192,6 @@ document.addEventListener("DOMContentLoaded", () => {
               ease: 'power3.out'
           });
       } else {
-        console.log("scrollPosition", scrollPosition);
           gsap.to(element, {
               opacity: 0,
               y: start,
@@ -240,7 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("start-level-1").addEventListener("click", () => {
-    console.log("Niveau 1 : Phishing démarre !");
     // Ajoutez ici la logique pour afficher ou charger le niveau 1
     // augmenter le scroll
     window.scrollTo({ top: 2000, behavior: "smooth" });
@@ -433,7 +427,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (userChoice === correctOption) {
         feedbackContainer.textContent = "✅ Bonne réponse ! WPA3 est le standard de chiffrement le plus sécurisé, et un mot de passe complexe protège mieux votre réseau.";
       } else if (userChoice === "Laisser le chiffrement WEP et changer uniquement le mot de passe.") {
-        console.log("correctOption");
         feedbackContainer.textContent = "❌ Mauvaise réponse ! Le chiffrement WEP est obsolète et facile à pirater, même avec un mot de passe complexe.";
       } else if (userChoice === "Garder les paramètres actuels, mais limiter l’accès au réseau.") {
         feedbackContainer.textContent = "⚠️ Réponse partiellement correcte. Limiter l'accès aide, mais le chiffrement WEP reste une vulnérabilité majeure.";

@@ -6,7 +6,9 @@
   Projet de  LE GALL Bastien, JARA Rémi, SALL Idrissa, MAEGHT Loan
 
 </div>
-[Le site](https://jadoreleau.com) est un site de sensibilisation à la pollution des océans.
+
+
+[Le site](https://jadoreleau.com/) est un site de sensibilisation à la pollution des océans.
 Le défi principal du projet se trouve dans la [page d'accueil](https://jadoreleau.com/index.html), et la [page jeu](https://jadoreleau.com/jouer.html) qui permettent d'apprendre les similitudes entre les humains et les océans puis de vérifier ses connaissances sur le quiz.
 
 ## Accessibilité (défi L’accessibilité au cœur du développement : relevez le défi !)
@@ -15,12 +17,12 @@ Le défi principal du projet se trouve dans la [page d'accueil](https://jadorele
 -   [x] Arias et labels sont utilisés correctement
 -   [x] Les couleurs ont un contraste suffisant (vérifié sur https://dequeuniversity.com/rules/axe/4.10/color-contrast)
 -   [x] Le site est navigable au clavier (voir raccourcis clavier)
-    -   [![Shortcuts](./shortcuts.png)]
+    -   ![Shortcuts](./shortcuts.png)
 -   [x] Le site est responsive sur tout type d'écran
-    -   [![Responsive](./responsive.png)]
+    -   ![Responsive](./responsive.png)
 -   [x] Les sections et titres sont cohérents (vérifié sur google page speed insights, section SEO et accessibilité)
 -   [x] Ajout des métadatas pour les vignettes du site (Open Graph & Twitter Card)
-    -   [![Metadata](./metadata.png)]
+    -   ![Metadata](./metadata.png)
 
 #### Vérifications
 

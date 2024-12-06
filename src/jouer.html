@@ -77,7 +77,8 @@
 
 <body>
     <main class="min-h-screen w-full bg-gray-100 text-gray-700" x-data="layout">
-        <header class="flex w-full items-center justify-between border-b-2 border-gray-200 bg-white">
+        <header
+            class="flex flex-col sm:flex-row w-full items-center justify-between border-b-2 border-gray-200 bg-white">
             <div class="flex items-center space-x-2 p-1">
                 <img src="assets/logo.png" class="h-12 w-12" alt="Logo du site NDLI2024 TheWildRobot" />
             </div>
@@ -91,6 +92,8 @@
                 <p class="underline text-sm">CTRL + ALT + J = Jouer</p>
                 <p class="underline text-sm">CTRL + ALT + C = Cyber c'est super</p>
                 <p class="underline text-sm">CTRL + ALT + D = Dashboard</p>
+                <p class="underline text-sm">CTRL + ALT + S = Statistiques</p>
+
             </div>
 
             <div class="flex items-center space-x-2 p-1">
@@ -128,6 +131,12 @@
                     class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
                     <i class="i-heroicons-adjustments-horizontal-solid h-7 w-7 mr-3"></i>
                     <span>Dashboard</span>
+                </a>
+
+                <a href="https://plausible.jadoreleau.com" aria-label="Statistiques"
+                    class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
+                    <i class="i-heroicons-presentation-chart-bar-20-solid h-7 w-7 mr-3" aria-label="Statistiques"></i>
+                    <span>Statistiques</span>
                 </a>
             </aside>
 

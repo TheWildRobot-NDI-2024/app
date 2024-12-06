@@ -37,6 +37,11 @@ Raccourcis clavier :
 
 ## Dashboard (défi Mets tes binocles!)
 
+On a choisi d'utiliser la combinaison de Grafana et Prometheus pour le dashboard puisqu'elle est très simple à mettre en place avec Docker. Elle est aussi très populaire dans le milieu de l'open source.
+Le dashboard a été fait précisément pour notre application. Il permet de voir les statistiques de l'application en temps réel.
+
+On ajoute à cela Uptime Kuma, qui permet d'avoir un système d'alerte lors de pannes. Très simple à mettre en place avec Docker.
+
 -   [x] [Dashboard](https://dash.jadoreleau.com/d/ce6270f3b0xdsf/main-dash?orgId=1&from=now-15m) Surveillance CPU, données, etc.
 -   [x] [Uptime](https://uptime.jadoreleau.com/dashboard/1) Surveillance temps de réponse, statut, certificats.
 
@@ -46,6 +51,15 @@ Pour les deux services :
 -   **Mot de passe** : ZVWE?S#2'8Hy3x.
 
 ## Enquête sur les Données : Devenez un Sherlock des Statistiques ! (défi Enquête sur les données)
+
+1. **Documentation** : La documentation claire facilite la prise en main et l'utilisation sans confusion.
+2. **Présentation** : La présentation simple et épurée rend la visualisation des données directe et facile à comprendre.
+3. **Implémentation Technique** : L'API bien structurée et performante assure une intégration fluide et une fonctionnalité fiable.
+4. **Pertinence des Données** : Les statistiques précises et pertinentes permettent des analyses détaillées et pertinentes pour les utilisateurs.
+5. **Bonus Sécurisation** : La sécurisation des endpoints garantit une protection des données sensibles contre les accès non autorisés.
+6. **Bonus Performance** : L'utilisation de la mise en cache optimise les performances et réduit les temps de réponse pour des analyses rapides.
+7. **Bonus Innovation** : L'usage innovant de l'IA pour des analyses avancées offre des perspectives uniques sur les comportements des utilisateurs.
+8. **Fiabilité** : La robustesse et la stabilité de l'application sont assurées par des tests réguliers et une gestion efficace des erreurs.
 
 -   [x] [Plausible](https://plausible.jadoreleau.com) Surveillance des visites, pages vues, etc.
 

@@ -77,6 +77,16 @@ Pour les deux services :
 
 -   [x] [Plausible](https://plausible.jadoreleau.com) Surveillance des visites, pages vues, etc.
 
+## La cyber c'est super ! (défi La cyber c'est super !)
+On a choisi ce défi car nous trouvvons que la cybersécurité est un enjeu majeur dans le monde actuel. Nous avons donc décidé de mettre en place un système de sécurité pour notre site. Nous cherchons à travers ce défi à sensibiliser les utilisateurs à la cybersécurité de manière ludique.
+
+### Illustration
+
+![Cyber](./cyber.png)
+![Cyber](./cyber2.png)
+
+
+
 Identifiants :
 
 -   **Utilisateur** : `admin@jadoreleau.com`

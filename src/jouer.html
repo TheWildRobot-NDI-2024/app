@@ -174,7 +174,7 @@
                     </div>
 
                     <!-- Zone de drop -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         <div class="relative drop-zone p-4 border-2 border-dashed border-gray-400 bg-gray-50 w-56 h-56 flex flex-col items-center justify-center rounded-lg gap-2"
                             id="box1">
                             <p class="absolute mt-2 -z-[0]">Biodiversité marine</p>
@@ -215,24 +215,25 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-col gap-2">
-                        <button id="submitButton"
-                            class="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg">
-                            Vérifier les paires
-                        </button>
 
-                        <button id="resetButton"
-                            class="px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-bold rounded-lg">
-                            Réinitialiser
-                        </button>
 
-                        <button id="helpButton" @click="openHelp = !openHelp"
-                            class="px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-lg">
-                            Voir toutes les explications
-                        </button>
-                        <p id="resultMessage" class="mt-4 text-lg font-medium text-gray-800 hidden"></p>
-                    </div>
+                </div>
+                <div class="flex flex-row gap-4">
+                    <button id="submitButton"
+                        class="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg">
+                        Vérifier les paires
+                    </button>
 
+                    <button id="resetButton"
+                        class="px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-bold rounded-lg">
+                        Réinitialiser
+                    </button>
+
+                    <button id="helpButton" @click="openHelp = !openHelp"
+                        class="px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-lg">
+                        Voir toutes les explications
+                    </button>
+                    <p id="resultMessage" class="mt-4 text-lg font-medium text-gray-800 hidden"></p>
                 </div>
                 <div id="helpMessage" class="text-lg flex flex-col gap-2 font-medium text-gray-800" x-show="openHelp">
                     <p> <span class="underline font-bold">Cerveau:</span> Le cerveau humain est encore très incompris. À

@@ -929,6 +929,16 @@ video {
   animation: bounce 1s infinite;
 }
 
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 .cursor-grab {
   cursor: grab;
 }
@@ -1031,6 +1041,10 @@ video {
   border-radius: 0.375rem;
 }
 
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -1113,6 +1127,16 @@ video {
 .bg-yellow-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1));
+}
+
+.bg-blue-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 234 254 / var(--tw-bg-opacity, 1));
+}
+
+.bg-blue-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 219 254 / var(--tw-bg-opacity, 1));
 }
 
 .p-1 {
@@ -1226,6 +1250,42 @@ video {
 
 .underline {
   text-decoration-line: underline;
+}
+
+.decoration-blue-500 {
+  text-decoration-color: #3b82f6;
+}
+
+.decoration-blue-500\/30 {
+  text-decoration-color: rgb(59 130 246 / 0.3);
+}
+
+.decoration-8 {
+  text-decoration-thickness: 8px;
+}
+
+.underline-offset-4 {
+  text-underline-offset: 4px;
+}
+
+.underline-offset-2 {
+  text-underline-offset: 2px;
+}
+
+.underline-offset-\[-8px\] {
+  text-underline-offset: -8px;
+}
+
+.underline-offset-\[8px\] {
+  text-underline-offset: 8px;
+}
+
+.underline-offset-\[0px\] {
+  text-underline-offset: 0px;
+}
+
+.underline-offset-\[08px\] {
+  text-underline-offset: 08px;
 }
 
 .outline {

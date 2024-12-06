@@ -8,6 +8,7 @@
 -   [x] Le site est navigable au clavier (voir raccourcis clavier)
 -   [x] Le site est responsive sur tout type d'écran
 -   [x] Les sections et titres sont cohérents (vérifié sur google page speed insights, section SEO et accessibilité)
+-   [x] Ajout des métadatas pour les vignettes du site (Open Graph & Twitter Card)
 
 #### Vérifications
 
@@ -38,8 +39,10 @@ Pour les deux services :
 -   **Mot de passe** : ZVWE?S#2'8Hy3x.
 
 ## Enquête sur les Données : Devenez un Sherlock des Statistiques ! (défi Enquête sur les données)
+
 -   [x] [Plausible](https://plausible.jadoreleau.com) Surveillance des visites, pages vues, etc.
 
 Identifiants :
--  **Utilisateur** : admin
--  **Mot de passe** : ZVWE?S#2'8Hy3x.
+
+-   **Utilisateur** : admin@jadoreleau.com
+-   **Mot de passe** : ZVWE?S#2'8Hy3x.

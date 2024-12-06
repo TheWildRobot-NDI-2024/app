@@ -3,7 +3,6 @@ const hoverZones = document.querySelectorAll('.hover-zone');
 
 hoverZones.forEach((hoverZone, index) => {
     const hoverImage = hoverZone.querySelector('.hover-image');
-    console.log(hoverImage);
     hoverZone.addEventListener('mousemove', (e) => {
         const rect = hoverZone.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -68,7 +67,6 @@ window.addEventListener('scroll', function () {
                     });
                 }
             };
-            console.log(scrollPosition);
             // Appliquer les animations sur chaque texte
             animateText(textCerveau, 840, 1100);
             animateText(textCoeur, 1900, 2300);

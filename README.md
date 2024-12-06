@@ -1,13 +1,31 @@
 # NDLI 2024 TheWildRobot
 
-## Accessibilité
+## Accessibilité (défi L’accessibilité au cœur du développement : relevez le défi !)
 
--   [ ] Les images ont une balise alt
--   [ ] Arias et labels sont utilisés correctement
--   [ ] Les couleurs ont un contraste suffisant
--   [ ] Le site est navigable au clavier
--   [ ] Le site est responsive
--   [ ] Les sections et titres sont cohérents
+-   [x] Les images ont une balise alt cohérente
+-   [x] Arias et labels sont utilisés correctement
+-   [x] Les couleurs ont un contraste suffisant (vérifié sur https://dequeuniversity.com/rules/axe/4.10/color-contrast)
+-   [x] Le site est navigable au clavier (voir raccourcis clavier)
+-   [x] Le site est responsive sur tout type d'écran
+-   [x] Les sections et titres sont cohérents (vérifié sur google page speed insights, section SEO et accessibilité)
+
+#### Vérifications
+
+Google page speed insights
+
+#### Comment naviguer au clavier ?
+
+-   [x] Tabulation
+-   [x] Flèches pour scroll
+-   [x] Touche entrée pour valider
+-   [x] Raccourcis clavier
+
+Raccourcis clavier :
+
+-   CTRL + ALT + A : Accueil
+-   CTRL + ALT + J : Jouer
+-   CTRL + ALT + D : Dashboard
+-   CTRL + ALT + C : Cyber
 
 ## Dashboard (défi Mets tes binocles!)
 

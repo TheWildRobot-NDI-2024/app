@@ -1,5 +1,5 @@
 <div align="center">
-  <img width=200 alt="NDLI 2024 TheWildRobot" src="/src/assets/logo.png">
+  <img width=200 alt="NDLI 2024 TheWildRobot" src="./src/assets/logo.png">
 
   # NDLI 2024 TheWildRobot
 

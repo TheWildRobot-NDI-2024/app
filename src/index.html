@@ -93,6 +93,13 @@
             opacity 0.3s ease,
             transform 0.3s ease;
     }
+
+    main {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1028%26quot%3b)' fill='none'%3e%3cpath d='M 0%2c277 C 96%2c304.8 288%2c422 480%2c416 C 672%2c410 768%2c264.4 960%2c247 C 1152%2c229.6 1344%2c312.6 1440%2c329L1440 560L0 560z' fill='rgba(147%2c 199%2c 255%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1028'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
 </style>
 
 <body>
@@ -115,8 +122,7 @@
             <i class="i-heroicons-bars-3-16-solid text-3xl cursor-pointer m-2" @click="asideOpen = !asideOpen"
                 x-show="!asideOpen"></i>
 
-            <aside class="flex w-72 flex-col space-y-2 border-r-2 border-gray-200 bg-white p-2" style="height: 90.5vh"
-                x-show="asideOpen">
+            <aside class="flex w-72 flex-col space-y-2 p-2" style="height: 90.5vh" x-show="asideOpen">
                 <i class="i-heroicons-bars-3-16-solid text-2xl cursor-pointer" @click="asideOpen = !asideOpen"></i>
 
                 <a href="index.html"
@@ -152,123 +158,100 @@
 
             <!-- main content page -->
             <div class="w-full h-full p-4 flex-col gap-2 items-start">
-                <div class="flex flex-col gap-2">
-                    <h1 class="text-4xl font-bold">Immersion</h1>
+                <div class="flex flex-col h-screen gap-2">
+                    <h1 class="text-4xl font-bold mt-6">Immersion</h1>
                     <p class="text-lg">Découvrez l'océan comme vous ne l'avez jamais vu.</p>
+
+                    <p class="text-2xl mt-16">Survolez les images pour en apprendre plus sur les conséquences du
+                        réchauffement
+                        climatique sur notre planète et faire le lien avec notre corps.</p>
+
+                    <p class="text-lg">Le but de cette page est de sensibiliser les gens sur les conséquences du
+                        réchauffement climatique sur notre planète en faisant le lien avec notre corps. En effet, notre
+                        corps est un écosystème très complexe et fragile, tout comme notre planète. Nous avons donc
+                        décidé de faire un parallèle entre les conséquences du réchauffement climatique sur notre
+                        planète
+                        et les conséquences sur notre corps.</p>
+
+                    <h1 class="text-3xl mt-10">Le jeu</h1>
+                    <p class="text-lg">Pour pouvoir réussir le jeu, vous devrez comprendre les conséquences du
+                        réchauffement climatique sur notre planète et faire le lien avec notre corps. Vous devrez
+                        également
+                        comprendre les conséquences du réchauffement climatique sur notre planète pour pouvoir réussir
+                        le
+                        jeu.</p>
+
+                    <i class="i-heroicons-arrow-down-16-solid text-6xl mt-40 animate-bounce"></i>
                 </div>
                 <div class="flex flex-row gap-2 items-start">
 
                     <div class="flex w-full h-full flex-col gap-32">
-                        <div class="flex flex-row justify-between items-center">
-                            <p class="mt-96 text-lg" id="textCerveau"> <span class="underline font-bold">Cerveau:</span>
-                                Le
-                                cerveau
-                                humain est encore
-                                très incompris. À
-                                l'heure
-                                actuelle, le fond marin est une zone moins explorée que la Lune. Un à deux tiers des
-                                espaces
-                                marins
-                                restent inconnus. Mais de nombreuses espèces subissent les conséquences du trafic
-                                maritime
-                                et
-                                des
-                                déversements de produits toxiques dans les océans.
-                            </p>
-                            <div class=" hover-zone relative w-full h-96 rounded-lg">
-                                <!-- Image de base -->
-                                <img src="./assets/biodiversite.jpg" alt="Base" class="base-image" />
-                                <!-- Image au survol -->
-                                <img src="./assets/cerveau.jpg" alt="Hover" class="hover-image" />
-                            </div>
-                        </div>
-                        <div class="flex flex-row justify-between items-center">
-
-                            <p id="textCoeur" class="text-lg"> <span class="underline font-bold">Coeur:</span> Un cœur
-                                stable
-                                qui bat à un
-                                rythme régulier est
-                                un signe de
-                                bonne santé. Les courants marins sont l'analogie parfaite : les cyclones et anticyclones
-                                sont
-                                essentiels pour maintenir les saisons telles que nous les connaissons. Le réchauffement
-                                des
-                                eaux
+                        <div class="flex flex-col lg:flex-row h-screen items-center">
+                            <p class="text-lg max-w-xl w-96 xl:w-auto 2xl:max-w-2xl" id="textCoeur">
+                                <span class="underline font-bold">Coeur:</span>
+                                Un cœur stable qui bat à un rythme régulier est un signe de bonne santé. Les courants
+                                marins sont l'analogie parfaite : les cyclones et anticyclones sont essentiels pour
+                                maintenir les saisons telles que nous les connaissons. Le réchauffement des eaux
                                 augmente le delta de température, perturbe les phénomènes météorologiques et les rend
-                                plus
-                                fréquents.
+                                plus fréquents.
                             </p>
-                            <div class=" hover-zone relative w-full h-96 rounded-lg">
+                            <div class="hover-zone relative w-full h-96 m-10 rounded-lg">
                                 <!-- Image de base -->
                                 <img src="./assets/courants.jpg" alt="Base" class="base-image" />
                                 <!-- Image au survol -->
                                 <img src="./assets/coeur.jpg" alt="Hover" class="hover-image" />
                             </div>
                         </div>
-                        <div class="flex flex-row justify-between items-center">
 
-                            <p id="textPoumons" class="text-lg"> <span class="underline font-bold ">Poumons:</span> Les
-                                poumons
-                                des humains sont
-                                des éponges très
-                                fragiles,
-                                et des dépôts dégradent rapidement leur efficacité. Au mieux, dans les océans, les
-                                planctons,
-                                qui
-                                représentent 50% de l'oxygène produit sur Terre, sont grandement affaiblis par
-                                l'acidification
-                                des
+                        <div class="flex flex-col lg:flex-row h-screen items-center">
+                            <p class="text-lg max-w-xl w-96 xl:w-auto 2xl:max-w-2xl" id="textPoumons">
+                                <span class="underline font-bold">Poumons:</span>
+                                Les poumons des humains sont des éponges très fragiles, et des dépôts dégradent
+                                rapidement leur efficacité. Au mieux, dans les océans, les planctons, qui représentent
+                                50% de l'oxygène produit sur Terre, sont grandement affaiblis par l'acidification des
                                 océans.
                             </p>
-                            <div class=" hover-zone relative w-full h-96 rounded-lg">
+                            <div class="hover-zone relative w-full h-96 m-10 rounded-lg">
                                 <!-- Image de base -->
                                 <img src="./assets/plancton.jpg" alt="Base" class="base-image" />
                                 <!-- Image au survol -->
                                 <img src="./assets/poumons.jpg" alt="Hover" class="hover-image" />
                             </div>
                         </div>
-                        <div class="flex flex-row justify-between items-center">
 
-                            <p id="textMains" class="text-lg"> <span class="underline font-bold">Mains:</span> La partie
-                                la
-                                plus
-                                sensible au
-                                froid du corps est
-                                les mains.
-                                Tout comme les coraux, qui sont les premiers à réagir aux changements de température de
-                                l'océan.
-                                Les
-                                conséquences sont immédiates : blanchiment des coraux, ce qui engendre la disparition de
-                                tout un
+                        <div class="flex flex-col lg:flex-row h-screen items-center">
+                            <p class="text-lg max-w-xl w-96 xl:w-auto 2xl:max-w-2xl" id="textMains">
+                                <span class="underline font-bold">Mains:</span>
+                                La partie la plus sensible au froid du corps est les mains. Tout comme les coraux, qui
+                                sont les premiers à réagir aux changements de température de l'océan. Les conséquences
+                                sont immédiates : blanchiment des coraux, ce qui engendre la disparition de tout un
                                 écosystème marin.
                             </p>
-                            <div class=" hover-zone relative w-full h-96 rounded-lg">
+                            <div class="hover-zone relative w-full h-96 m-10 rounded-lg">
                                 <!-- Image de base -->
                                 <img src="./assets/coraux.jpg" alt="Base" class="base-image" />
                                 <!-- Image au survol -->
                                 <img src="./assets/mains.jpg" alt="Hover" class="hover-image" />
                             </div>
                         </div>
-                        <div class="flex flex-row justify-between items-center">
 
-                            <p id="textPieds" class="text-lg"> <span class="underline font-bold">Pieds:</span> Nos
-                                membres
-                                nous
-                                sont chers, pour
-                                nous nourrir
-                                ou encore
-                                marcher. De la même manière, dans l'océan, retirer ou réduire une population d'individus
-                                rend la
-                                survie de la biodiversité dans son ensemble très compliquée, voire impossible. C'est un
-                                écosystème
-                                très minutieux.</p>
-                            <div class=" hover-zone relative w-full h-96 rounded-lg">
+                        <div class="flex flex-col lg:flex-row h-screen items-center">
+                            <p class="text-lg max-w-xl w-96 xl:w-auto 2xl:max-w-2xl" id="textPieds">
+                                <span class="underline font-bold">Pieds:</span>
+                                Nos membres nous sont chers, pour nous nourrir ou encore marcher. De la même manière,
+                                dans l'océan, retirer ou réduire une population d'individus rend la survie de la
+                                biodiversité dans son ensemble très compliquée, voire impossible. C'est un écosystème
+                                très minutieux.
+                            </p>
+                            <div class="hover-zone relative w-full h-96 m-10 rounded-lg">
                                 <!-- Image de base -->
                                 <img src="./assets/ecosysteme.jpg" alt="Base" class="base-image" />
                                 <!-- Image au survol -->
                                 <img src="./assets/pieds.jpg" alt="Hover" class="hover-image" />
                             </div>
                         </div>
+
+
                     </div>
 
                 </div>

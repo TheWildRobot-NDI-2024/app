@@ -638,6 +638,20 @@ video {
   --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='16' height='16'%3E%3Cpath fill='black' fill-rule='evenodd' d='M6.333 4.478A4 4 0 0 0 1 8.25c0 .414.336.75.75.75h3.322A12.8 12.8 0 0 0 7 10.928v3.322c0 .414.336.75.75.75a4 4 0 0 0 3.772-5.333A10.72 10.72 0 0 0 15 1.75a.75.75 0 0 0-.75-.75a10.72 10.72 0 0 0-7.917 3.478M12 5.5a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0' clip-rule='evenodd'/%3E%3Cpath fill='black' d='M3.902 10.682a.75.75 0 1 0-1.313-.725a4.76 4.76 0 0 0-.469 3.36a.75.75 0 0 0 .564.563a4.76 4.76 0 0 0 3.359-.47a.75.75 0 1 0-.725-1.312a3.23 3.23 0 0 1-1.81.393a3.23 3.23 0 0 1 .394-1.81'/%3E%3C/svg%3E");
 }
 
+.i-heroicons-arrow-down-16-solid {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='16' height='16'%3E%3Cpath fill='black' fill-rule='evenodd' d='M8 2a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.22 3.22V2.75A.75.75 0 0 1 8 2' clip-rule='evenodd'/%3E%3C/svg%3E");
+}
+
 .visible {
   visibility: visible;
 }
@@ -652,6 +666,10 @@ video {
 
 .static {
   position: static;
+}
+
+.fixed {
+  position: fixed;
 }
 
 .absolute {
@@ -678,6 +696,10 @@ video {
   margin: 0.5rem;
 }
 
+.m-10 {
+  margin: 2.5rem;
+}
+
 .mr-3 {
   margin-right: 0.75rem;
 }
@@ -692,6 +714,26 @@ video {
 
 .mt-96 {
   margin-top: 24rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mt-40 {
+  margin-top: 10rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .block {
@@ -763,6 +805,18 @@ video {
   height: 3rem;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.h-4\/6 {
+  height: 66.666667%;
+}
+
+.h-4 {
+  height: 1rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -819,8 +873,32 @@ video {
   width: 3rem;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .max-w-6xl {
   max-width: 72rem;
+}
+
+.max-w-sm {
+  max-width: 24rem;
+}
+
+.max-w-xl {
+  max-width: 36rem;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.max-w-full {
+  max-width: 100%;
 }
 
 .flex-grow {
@@ -833,6 +911,22 @@ video {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
 }
 
 .cursor-grab {
@@ -1092,6 +1186,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1190,13 +1289,71 @@ video {
     width: 16rem;
   }
 
+  .sm\:max-w-3xl {
+    max-width: 48rem;
+  }
+
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 768px) {
+  .md\:max-w-3xl {
+    max-width: 48rem;
+  }
+
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:w-96 {
+    width: 24rem;
+  }
+
+  .lg\:w-auto {
+    width: auto;
+  }
+
+  .lg\:max-w-3xl {
+    max-width: 48rem;
+  }
+
+  .lg\:max-w-2xl {
+    max-width: 42rem;
+  }
+
+  .lg\:max-w-full {
+    max-width: 100%;
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:w-auto {
+    width: auto;
+  }
+
+  .xl\:max-w-3xl {
+    max-width: 48rem;
+  }
+
+  .xl\:max-w-2xl {
+    max-width: 42rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:max-w-2xl {
+    max-width: 42rem;
   }
 }

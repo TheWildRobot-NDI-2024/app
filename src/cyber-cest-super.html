@@ -15,12 +15,14 @@
 <body class="bg-black text-white flex flex-col items-center justify-center overflow-x-hidden">
 
     <!-- Titre principal -->
-    <div class="bg-black text-white flex flex-col items-center justify-center h-[120vh]">
+    <div class="bg-black text-white flex flex-col items-center justify-center min-h-screen">
         <p id="title"
-            class="text-9xl font-bold text-center tracking-wide uppercase bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text opacity-100">
+            class="text-5xl sm:text-9xl font-bold text-center tracking-wide uppercase bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text opacity-100">
             Cyber C'est Super
+            <i class="i-heroicons-arrow-down-16-solid mt-5 text-6xl animate-bounce text-white"></i>
         </p>
     </div>
+
 
     <!-- Introduction avec le chatbot -->
     <div id="chatbot" class="mt-10 max-w-2xl p-6 bg-gray-800 rounded-lg shadow-lg opacity-0">
@@ -31,14 +33,16 @@
             niveaux.</p>
         <p class="text-lg mt-4">🎯 Êtes-vous prêt à relever le défi ?</p>
     </div>
+
     <a href="./index.html" class="mt-10 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded text-lg">Cliquez pour
-        un retour à
-        l'accueil, sinon scrollez vers le bas</a>
+        un retour à l'accueil, sinon scrollez vers le bas</a>
+    <i class="i-heroicons-arrow-down-16-solid mt-5 text-6xl animate-bounce text-white"></i>
+
 
     <!-- Introduction du jeu -->
     <div id="game-intro" class="h-[50vh] flex flex-col items-center justify-center opacity-0">
         <h2 id="intro-title"
-            class="text-4xl font-bold text-center mb-6 bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text">
+            class="text-3xl sm:text-4xl font-bold text-center mb-6 bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text">
             Bienvenue dans le Jeu !
         </h2>
         <p id="intro-text-1" class="text-lg text-center mb-4 max-w-xl">
@@ -69,15 +73,16 @@
 
     <div id="level-1" class="h-[100vh] flex items-center justify-center opacity-0 pointer-events-none">
         <h2 id="level-1-text"
-            class="text-7xl font-bold text-center max-w-6xl bg-gradient-to-r from-yellow-400 to-red-500 text-transparent bg-clip-text">
+            class="text-4xl sm:text-7xl font-bold text-center max-w-6xl bg-gradient-to-r from-yellow-400 to-red-500 text-transparent bg-clip-text">
             Niveau 1 : Phishing - Détectez les tentatives de fraude !
         </h2>
     </div>
+    <i class="i-heroicons-arrow-down-16-solid mt-5 text-6xl animate-bounce text-white"></i>
 
     <!-- Sensibilisation -->
     <div id="level-1-info" class="relative w-full h-[50vh] mb-10 opacity-0">
         <div
-            class="w-[45vw] h-[50vh] text-left mb-10 absolute top-0 left-5 flex flex-col justify-center bg-gray-800 p-6 rounded-lg shadow-lg">
+            class="w-[90vw] sm:w-[45vw] h-[50vh] text-left mb-10 absolute top-0 left-5 flex flex-col justify-center bg-gray-800 p-6 rounded-lg shadow-lg">
             <h3 class="text-2xl font-semibold mb-4 text-white">🚨 Qu'est-ce que le phishing ?</h3>
             <p class="text-lg mb-6 text-gray-300">
                 Le phishing est une technique de fraude où les cybercriminels se font passer pour des entités légitimes
@@ -94,10 +99,11 @@
         </div>
     </div>
 
+
     <!-- Email suspect à analyser -->
     <div id="level-1-mailsuspect" class="relative w-full h-[50vh] my-20 opacity-0">
         <div
-            class="w-[45vw] h-[50vh] text-left mb-10 absolute top-0 right-5 flex flex-col justify-center bg-gray-800 p-6 rounded-lg shadow-lg">
+            class="w-full sm:w-[45vw] h-auto text-left mb-10 absolute top-0 right-5 flex flex-col justify-center bg-gray-800 p-6 rounded-lg shadow-lg">
             <h3 class="text-2xl font-semibold mb-4">🔍 Exemple d'email suspect :</h3>
             <p class="mb-4">
                 De : <span class="text-red-400">support@banque-fake.com</span><br>
@@ -115,26 +121,30 @@
         </div>
     </div>
 
+    <i class="i-heroicons-arrow-down-16-solid mt-5 text-6xl animate-bounce text-white"></i>
+
+
     <!-- Question Quiz -->
     <div id="quiz-niv-1" class="max-w-4xl text-center my-20 opacity-0">
         <h3 class="text-2xl font-semibold mb-4">❓ Question :</h3>
         <p class="text-lg mb-6">Quel élément de cet email est le plus suspect ?</p>
-        <button id="quiz-answer-1" class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded m-2">
-            L'adresse email de l'expéditeur
-        </button>
-        <button id="quiz-answer-2" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded m-2">
-            Le lien de vérification
-        </button>
-        <button id="quiz-answer-3" class="bg-yellow-500 hover:bg-yellow-700 text-white py-2 px-4 rounded m-2">
-            L'urgence dans le message
-        </button>
+        <div class="flex flex-wrap justify-center">
+            <button id="quiz-answer-1" class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded m-2">
+                L'adresse email de l'expéditeur
+            </button>
+            <button id="quiz-answer-2" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded m-2">
+                Le lien de vérification
+            </button>
+            <button id="quiz-answer-3" class="bg-yellow-500 hover:bg-yellow-700 text-white py-2 px-4 rounded m-2">
+                L'urgence dans le message
+            </button>
+        </div>
     </div>
 
     <!-- Feedback du Quiz -->
     <div id="quiz-response" class="max-w-4xl text-center my-10 opacity-0">
         <p id="quiz-feedback" class="text-lg font-semibold"></p>
     </div>
-
 
     <!-- Bonnes Pratiques : Se protéger du Phishing -->
     <div id="phishing-tips" class="h-auto py-10 flex flex-col items-center justify-start mb-10">
@@ -159,7 +169,6 @@
         </p>
     </div>
 
-
     <!-- Transition au cas pratique -->
     <div id="case-intro" class="max-w-4xl text-center mt-10 pointer-events-none">
         <h3 class="text-2xl font-semibold mb-4">🎯 Félicitations !</h3>
@@ -169,39 +178,39 @@
         </p>
     </div>
 
+
     <!-- Cas Pratique : Analyse d'emails -->
     <div id="case-practice" class="h-auto py-10 flex flex-col items-center justify-start pointer-events-none">
         <!-- Titre principal -->
         <h2
-            class="text-4xl font-bold text-center mb-10 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
+            class="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-10 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
             Cas Pratique : Analysez les Emails !
         </h2>
     </div>
 
     <!-- Instructions -->
-    <div class="max-w-4xl text-left mb-10">
-        <h3 class="text-2xl font-semibold mb-4">🔍 Instructions :</h3>
-        <p class="text-lg">
+    <div class="max-w-full md:max-w-4xl text-left mb-6 md:mb-10 px-4">
+        <h3 class="text-xl md:text-2xl font-semibold mb-4">🔍 Instructions :</h3>
+        <p class="text-base md:text-lg">
             Vous allez recevoir trois emails. Votre mission est de repérer lequel (ou lesquels) sont des tentatives de
             phishing. Analysez les détails comme :
         </p>
-        <ul class="list-disc list-inside text-lg mb-6">
+        <ul class="list-disc list-inside text-base md:text-lg mb-6">
             <li>L'adresse email de l'expéditeur</li>
             <li>Les liens contenus dans l'email</li>
             <li>Le ton du message (urgence, menaces, etc.)</li>
         </ul>
-        <p class="text-lg">
+        <p class="text-base md:text-lg">
             Cliquez sur "Analyser" pour révéler chaque email, puis sélectionnez si l'email est légitime ou une tentative
             de phishing.
         </p>
     </div>
 
     <!-- Emails à analyser -->
-    <div id="emails" class="space-y-6 max-w-3xl">
+    <div id="emails" class="space-y-6 max-w-full md:max-w-3xl px-4">
         <!-- Email 1 -->
-        <div class="bg-gray-800 text-white p-6 rounded-lg shadow-lg">
-
-            <h3 class="text-xl font-semibold mb-4">Email 1 :</h3>
+        <div class="bg-gray-800 text-white p-4 md:p-6 rounded-lg shadow-lg">
+            <h3 class="text-lg md:text-xl font-semibold mb-4">Email 1 :</h3>
             <p>
                 De : <span class="text-red-400">security@apple-account.com</span><br>
                 Objet : <span class="text-yellow-400">"Votre compte Apple a été verrouillé"</span>
@@ -214,8 +223,8 @@
                 Merci,<br>
                 L'équipe Apple
             </p>
-            <div class="mt-4 flex space-x-4">
-                <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">
+            <div class="mt-4 flex space-x-4 flex-wrap justify-center md:justify-start">
+                <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded mb-2 md:mb-0">
                     Phishing
                 </button>
                 <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">
@@ -225,8 +234,8 @@
         </div>
 
         <!-- Email 2 -->
-        <div class="bg-gray-800 text-white p-6 rounded-lg shadow-lg">
-            <h3 class="text-xl font-semibold mb-4">Email 2 :</h3>
+        <div class="bg-gray-800 text-white p-4 md:p-6 rounded-lg shadow-lg">
+            <h3 class="text-lg md:text-xl font-semibold mb-4">Email 2 :</h3>
             <p>
                 De : <span class="text-green-400">no-reply@amazon.com</span><br>
                 Objet : <span class="text-yellow-400">"Confirmation de votre commande #12345"</span>
@@ -239,8 +248,8 @@
                 Merci,<br>
                 L'équipe Amazon
             </p>
-            <div class="mt-4 flex space-x-4">
-                <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">
+            <div class="mt-4 flex space-x-4 flex-wrap justify-center md:justify-start">
+                <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded mb-2 md:mb-0">
                     Phishing
                 </button>
                 <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">
@@ -250,8 +259,8 @@
         </div>
 
         <!-- Email 3 -->
-        <div class="bg-gray-800 text-white p-6 rounded-lg shadow-lg">
-            <h3 class="text-xl font-semibold mb-4">Email 3 :</h3>
+        <div class="bg-gray-800 text-white p-4 md:p-6 rounded-lg shadow-lg">
+            <h3 class="text-lg md:text-xl font-semibold mb-4">Email 3 :</h3>
             <p>
                 De : <span class="text-red-400">support@banking-secure.com</span><br>
                 Objet : <span class="text-yellow-400">"Urgent : Votre compte est compromis"</span>
@@ -264,8 +273,8 @@
                 Merci,<br>
                 L'équipe de sécurité bancaire
             </p>
-            <div class="mt-4 flex space-x-4">
-                <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">
+            <div class="mt-4 flex space-x-4 flex-wrap justify-center md:justify-start">
+                <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded mb-2 md:mb-0">
                     Phishing
                 </button>
                 <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">
@@ -275,108 +284,114 @@
         </div>
     </div>
 
+    <i class="i-heroicons-arrow-down-16-solid mt-5 text-6xl animate-bounce text-white"></i>
+
 
     <!-- Validation -->
-    <div id="case-result" class="mt-10 text-center">
-        <h3 class="text-2xl font-semibold mb-4">📊 Résultats :</h3>
-        <p class="text-lg">Vous avez correctement identifié <span id="correct-answers">0</span> tentatives de phishing
+    <div id="case-result" class="mt-10 text-center px-4">
+        <h3 class="text-xl md:text-2xl font-semibold mb-4">📊 Résultats :</h3>
+        <p class="text-base md:text-lg">Vous avez correctement identifié <span id="correct-answers">0</span> tentatives
+            de phishing
             sur 3.</p>
         <button id="restart-case" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded mt-6">
             Réessayer
         </button>
     </div>
 
+
     <div id="level-2" class="h-[100vh] flex items-center justify-center opacity-0 pointer-events-none">
         <h2 id="level-2-text"
-            class="text-7xl font-bold text-center max-w-6xl bg-gradient-to-r from-yellow-400 to-red-500 text-transparent bg-clip-text">
+            class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center max-w-6xl bg-gradient-to-r from-yellow-400 to-red-500 text-transparent bg-clip-text">
             Niveau 2 : Ransomware - Protégez vos données !
         </h2>
     </div>
+    <i class="i-heroicons-arrow-down-16-solid mt-5 text-6xl animate-bounce text-white"></i>
 
     <!-- Sensibilisation -->
-    <div id="level-2-info" class="max-w-4xl text-left my-10">
-        <h3 class="text-2xl font-semibold mb-4">🔐 Qu'est-ce qu'un ransomware ?</h3>
-        <p class="text-lg mb-6">
+    <div id="level-2-info" class="max-w-4xl text-left my-10 px-4 sm:px-6 lg:px-8">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-4">🔐 Qu'est-ce qu'un ransomware ?</h3>
+        <p class="text-base sm:text-lg mb-6">
             Un ransomware est un logiciel malveillant qui verrouille vos fichiers ou votre système et demande une rançon
             pour les débloquer. Les hackers utilisent souvent des méthodes comme :
         </p>
-        <ul class="list-disc list-inside text-lg mb-6">
+        <ul class="list-disc list-inside text-base sm:text-lg mb-6">
             <li>L'envoi de fichiers infectés par email.</li>
             <li>Des téléchargements depuis des sites web non sécurisés.</li>
             <li>Des périphériques USB contaminés.</li>
         </ul>
-        <p class="text-lg">
+        <p class="text-base sm:text-lg">
             Si vos données sont verrouillées, il est souvent impossible de les récupérer sans une clé de déchiffrement
             que les hackers vous fourniront contre une rançon.
         </p>
     </div>
 
     <!-- Bonnes pratiques -->
-    <div id="ransomware-tips" class="max-w-4xl text-left mb-10">
-        <h3 class="text-2xl font-semibold mb-4">🛡️ Comment se protéger contre les ransomwares ?</h3>
-        <ul class="list-disc list-inside text-lg mb-6">
+    <div id="ransomware-tips" class="max-w-4xl text-left mb-10 px-4 sm:px-6 lg:px-8">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-4">🛡️ Comment se protéger contre les ransomwares ?</h3>
+        <ul class="list-disc list-inside text-base sm:text-lg mb-6">
             <li>📧 Ne téléchargez pas de fichiers provenant d'expéditeurs inconnus.</li>
             <li>🔗 Évitez de visiter des sites web non sécurisés.</li>
             <li>🔒 Effectuez des sauvegardes régulières de vos données sur un support externe.</li>
             <li>🛠️ Mettez régulièrement à jour vos logiciels et votre système d'exploitation.</li>
             <li>⚠️ Utilisez un antivirus fiable pour détecter les logiciels malveillants.</li>
         </ul>
-        <p class="text-lg">
+        <p class="text-base sm:text-lg">
             En suivant ces bonnes pratiques, vous réduirez considérablement les risques d'être victime d'un ransomware.
         </p>
     </div>
+    <i class="i-heroicons-arrow-down-16-solid mt-5 text-6xl animate-bounce text-white"></i>
+
 
     <!-- Cas pratique -->
-    <div id="case-practice-2" class="max-w-4xl bg-gray-800 text-white p-6 rounded-lg shadow-lg">
-        <h3 class="text-2xl font-semibold mb-4">🎯 Cas Pratique : Une pièce jointe suspecte</h3>
+    <div id="case-practice-2" class="max-w-4xl bg-gray-800 text-white p-6 rounded-lg shadow-lg px-4 sm:px-6 lg:px-8">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-4">🎯 Cas Pratique : Une pièce jointe suspecte</h3>
         <p class="mb-4">
             Vous recevez un email de votre "collègue" contenant une pièce jointe nommée <span
                 class="text-yellow-400">"Facture_Janvier.pdf.exe"</span>. Que faites-vous ?
         </p>
-        <div class="mt-4 flex space-x-4">
-            <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">
+        <div class="mt-4 flex flex-wrap space-x-4">
+            <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded mb-2 sm:mb-0">
                 Ouvrir la pièce jointe
             </button>
-            <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">
+            <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded mb-2 sm:mb-0">
                 Signaler l'email au service IT
             </button>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded mb-2 sm:mb-0">
                 Ignorer l'email
             </button>
         </div>
     </div>
 
-
     <!-- Niveau 3 : Protection Réseau -->
-
     <div id="level-3" class="h-[100vh] flex items-center justify-center opacity-0 pointer-events-none">
         <h2 id="level-3-text"
-            class="text-7xl font-bold text-center max-w-6xl bg-gradient-to-r from-yellow-400 to-red-500 text-transparent bg-clip-text">
+            class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center max-w-6xl bg-gradient-to-r from-yellow-400 to-red-500 text-transparent bg-clip-text">
             Niveau 3 : Protection Réseau - Sécurisez vos connexions !
         </h2>
+        <i class="i-heroicons-arrow-down-16-solid mt-5 text-6xl animate-bounce text-white"></i>
     </div>
 
     <!-- Sensibilisation -->
-    <div id="level-3-info" class="max-w-4xl text-left mb-10">
-        <h3 class="text-2xl font-semibold mb-4">🛡️ Pourquoi protéger votre réseau ?</h3>
-        <p class="text-lg mb-6">
+    <div id="level-3-info" class="max-w-4xl text-left mb-10 px-4 sm:px-6 lg:px-8">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-4">🛡️ Pourquoi protéger votre réseau ?</h3>
+        <p class="text-base sm:text-lg mb-6">
             Votre réseau est la porte d’entrée de votre système d’information. Si un attaquant accède à votre réseau, il
             peut :
         </p>
-        <ul class="list-disc list-inside text-lg mb-6">
+        <ul class="list-disc list-inside text-base sm:text-lg mb-6">
             <li>Voler vos données personnelles et professionnelles.</li>
             <li>Installer des logiciels malveillants sur vos appareils.</li>
             <li>Utiliser votre réseau pour lancer d'autres attaques.</li>
         </ul>
-        <p class="text-lg">
+        <p class="text-base sm:text-lg">
             Protéger votre réseau est essentiel pour sécuriser vos données et celles de votre entreprise.
         </p>
     </div>
 
     <!-- Bonnes pratiques -->
-    <div id="network-tips" class="max-w-4xl text-left mb-10">
-        <h3 class="text-2xl font-semibold mb-4">📋 Bonnes Pratiques pour sécuriser votre réseau :</h3>
-        <ul class="list-disc list-inside text-lg mb-6">
+    <div id="network-tips" class="max-w-4xl text-left mb-10 px-4 sm:px-6 lg:px-8">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-4">📋 Bonnes Pratiques pour sécuriser votre réseau :</h3>
+        <ul class="list-disc list-inside text-base sm:text-lg mb-6">
             <li>🔑 Utilisez des mots de passe complexes pour votre routeur.</li>
             <li>🔒 Activez le chiffrement WPA3 pour votre réseau Wi-Fi.</li>
             <li>📡 Désactivez l'option WPS (Wi-Fi Protected Setup).</li>
@@ -384,14 +399,16 @@
             <li>❌ Ne connectez pas d'appareils non fiables à votre réseau.</li>
             <li>🚫 Évitez d’utiliser des réseaux Wi-Fi publics pour des transactions sensibles.</li>
         </ul>
-        <p class="text-lg">
+        <p class="text-base sm:text-lg">
             En appliquant ces bonnes pratiques, vous réduisez significativement les risques d'intrusion sur votre
             réseau.
         </p>
     </div>
+    <i class="i-heroicons-arrow-down-16-solid mt-5 text-6xl animate-bounce text-white"></i>
+
 
     <!-- Cas pratique -->
-    <div id="case-practice-3" class="max-w-3xl bg-gray-800 text-white p-6 rounded-lg shadow-lg">
+    <div id="case-practice-3" class="max-w-3xl bg-gray-800 text-white p-6 rounded-lg shadow-lg mx-auto">
         <h3 class="text-2xl font-semibold mb-4">🎯 Cas Pratique : Un réseau non sécurisé</h3>
         <p class="mb-4">
             Vous configurez un nouveau réseau Wi-Fi chez vous. Voici les paramètres actuels :
@@ -404,21 +421,21 @@
         <p class="mb-4">
             Que faites-vous pour sécuriser votre réseau ?
         </p>
-        <div class="mt-4 flex flex-col space-y-4">
-            <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">
+        <div class="mt-4 flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+            <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded w-full sm:w-auto">
                 Laisser le chiffrement WEP et changer uniquement le mot de passe.
             </button>
-            <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">
+            <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded w-full sm:w-auto">
                 Passer au chiffrement WPA3 et définir un mot de passe complexe.
             </button>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded w-full sm:w-auto">
                 Garder les paramètres actuels, mais limiter l’accès au réseau.
             </button>
         </div>
     </div>
 
     <!-- Transition vers la fin -->
-    <div id="game-end" class="max-w-4xl text-center mt-10 pointer-events-none">
+    <div id="game-end" class="max-w-4xl text-center mt-10 pointer-events-none mx-auto">
         <h3 class="text-2xl font-semibold mb-4">🎉 Félicitations, Expert en Cybersécurité !</h3>
         <p class="text-lg">
             Vous avez complété tous les niveaux et appris à vous protéger contre le phishing, les ransomwares, et à
